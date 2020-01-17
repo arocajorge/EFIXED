@@ -1584,7 +1584,9 @@ namespace FirmElect.Bus
                    case "07"://retencion
                        sTipoDoc = "RETENCION";
                        break;
-
+                       case "03"://factura
+                       sTipoDoc = "LIQUIDACION COMPRA";
+                       break;
                }
 
                return sTipoDoc;

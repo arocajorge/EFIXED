@@ -75,6 +75,8 @@
   <ItemGroup>
     <Compile Include="cl_parametrosGenerales_Bus.cs" />
     <Compile Include="comprobanteRetencion_Bus.cs" />
+    <Compile Include="liquidacion_compra_Bus.cs" />
+    <Compile Include="fx_liquidacion_compra_Bus.cs" />
     <Compile Include="fx_NotaDebito_Bus.cs" />
     <Compile Include="factura_Bus.cs" />
     <Compile Include="Firma_Bus.cs" />

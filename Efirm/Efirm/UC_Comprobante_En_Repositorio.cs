@@ -470,7 +470,24 @@ namespace Efirm
                         }
                         item.mensaje_error_validacion = item.mensaje_error_validacion + mensaje;
                         break;
+
+                    case "03":
+
+                        liquidacion_compra_Bus Bus_liq = new liquidacion_compra_Bus();
+                        if (Bus_liq.Validar_xml_vs_sxd(xmlcomprobante, ref mensaje))
+                        {
+                            item.Estado_Valicion = (item.Estado_Valicion == "ERROR") ? "ERROR" : "VALIDO";
+                            FileValido = true;
+                        }
+                        else
+                        {
+                            item.Estado_Valicion = "ERROR";
+                            FileValido = false;
+                        }
+                        item.mensaje_error_validacion = item.mensaje_error_validacion + mensaje;
+                        break;
                     default:
+
                         item.Estado_Valicion = "ERROR";
                         mensaje = "Archivo no  tiene el tag codDoc o no es un xml valido del SRI";
                         item.mensaje_error_validacion = item.mensaje_error_validacion + mensaje;
@@ -1030,6 +1047,9 @@ namespace Efirm
                                 case "07"://retencion
                                     IdComprobante = "RT-" + estab + "-" + ptoEmi + "-" + Secuencial_doc;
                                     break;
+                                case "03"://retencion
+                                    IdComprobante = "LC-" + estab + "-" + ptoEmi + "-" + Secuencial_doc;
+                                    break;
                             }
 
                             item.TipoCbte = IdComprobante;
@@ -1441,6 +1461,18 @@ namespace Efirm
                                             RasonSocial_Comprador = comprobante.GetElementsByTagName("razonSocialSujetoRetenido")[0].InnerText.Trim();
                                             EsProveedor = true;
                                             break;
+
+                                        case "03"://factura
+                                            IdComprobante = "LC-" + estab + "-" + ptoEmi + "-" + Secuencial_doc;
+                                            total = Convert.ToDouble(comprobante.GetElementsByTagName("importeTotal")[0].InnerText);
+
+
+                                            fechaEmision_Docu = DateTime.Parse(comprobante.GetElementsByTagName("fechaEmision")[0].InnerText.Trim(), new CultureInfo("es-EC"));
+
+                                            cedula_ruc_cliente_prov = comprobante.GetElementsByTagName("identificacionProveedor")[0].InnerText.Trim();
+                                            RasonSocial_Comprador = comprobante.GetElementsByTagName("razonSocialProveedor")[0].InnerText.Trim();
+                                            EsCliente = true;
+                                            break;
                                     }
                                     
                                     IdEstado_cbte = "VALI";
@@ -1646,6 +1678,11 @@ namespace Efirm
 
                                             fechaEmision_Docu = DateTime.Parse(comprobante.GetElementsByTagName("fechaEmision")[0].InnerText.Trim(), new CultureInfo("es-EC"));
                                             
+                                            break;
+                                        case "03"://retencion
+
+                                            fechaEmision_Docu = DateTime.Parse(comprobante.GetElementsByTagName("fechaEmision")[0].InnerText.Trim(), new CultureInfo("es-EC"));
+
                                             break;
                                     }
 

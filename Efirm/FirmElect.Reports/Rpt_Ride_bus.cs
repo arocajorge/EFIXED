@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using FirmElect.Info;
 using FirmElect.Data;
 using FirmElect.Info.class_sri.Factura_V2;
+using FirmElect.Info.class_sri.LiquidacionCompra;
+
 using FirmElect.Info.class_sri.NotaCredito;
 using FirmElect.Info.class_sri.NotaDebito;
 using FirmElect.Info.class_sri.GuiaRemision;
@@ -30,6 +32,7 @@ namespace FirmElect.Reports
         IRpt_Ride_Guia_Remis OBusReporteGuia_Remi;
         IRpt_Ride_NotaCred OBusReporteNotaCred;
         IRpt_Ride_NotaDeb OBusReporteNotaDeb;
+        IRpt_Ride_liquidacion OBusLiquidacion;
 
         tb_Comprobante_tipo_Data data_ = new Data.tb_Comprobante_tipo_Data();
         List<tb_Empresa_Info> listEmpresa = new List<tb_Empresa_Info>();
@@ -78,6 +81,7 @@ namespace FirmElect.Reports
                     OBusReporteGuia_Remi = new Rpt_Ride_GEN_Guia_Remis();
                     OBusReporteNotaCred = new Rpt_Ride_GEN_NotaCred();
                     OBusReporteNotaDeb = new Rpt_Ride_GEN_NotaDeb();
+                    OBusLiquidacion = new Rpt_Ride_GEN_Liquidacion();
                 }
                 else// instancio por string las clases 
                 {
@@ -412,7 +416,46 @@ namespace FirmElect.Reports
                         break;
 
 
+                    case "03":
+                        liquidacion_compra_Ride_Info info_liquidacion = new liquidacion_compra_Ride_Info();
 
+                        //  si no esta guardado el reporte en la bd
+                        if (Info.ReporteBy == null)
+                        {
+                            info_liquidacion = DataCbte.consultar_liquidacion_compra_ride(InfoCbte.IdEmpresa, InfoCbte.IdComprobante, InfoCbte.IdTipoDocumento, InfoCbte.IdEstado_cbte, ref mensajeErrorOut);
+                            info_liquidacion.Logo = Logo;
+                            info_liquidacion.numeros_en_letras = funciones.NumeroALetras(info_liquidacion.factura.infoLiquidacionCompra.importeTotal.ToString());
+
+                            Reporte = OBusLiquidacion.Optener_reporte(info_liquidacion);
+                            using (MemoryStream stream = new MemoryStream())
+                            {
+                                byte[] data;
+                                Reporte.SaveLayout(stream);
+                                data = stream.ToArray();
+
+
+
+
+                                // grabar bd
+                                InfoComprobanteem.IdEmpresa = InfoCbte.IdEmpresa;
+                                InfoComprobanteem.idComprobante_tipo = InfoCbte.IdTipoDocumento;
+                                InfoComprobanteem.File_disenio_rpt = data;
+                                IBusComprobanteem.ModificarDB(InfoComprobanteem, ref mensajeErrorOut);
+
+                            }
+                        }
+                        else
+                        {
+                            info_liquidacion = DataCbte.consultar_liquidacion_compra_ride(InfoCbte.IdEmpresa, InfoCbte.IdComprobante, InfoCbte.IdTipoDocumento, InfoCbte.IdEstado_cbte, ref mensajeErrorOut);
+                            info_liquidacion.Logo = Logo;
+                            info_liquidacion.numeros_en_letras = funciones.NumeroALetras(info_liquidacion.factura.infoLiquidacionCompra.importeTotal.ToString());
+                            File.WriteAllBytes(Ruta_Reporte_Fac, Info.ReporteBy);
+                            Reporte = OBusLiquidacion.Optener_reporte(info_liquidacion);
+                            Reporte.LoadLayout(Ruta_Reporte_Fac);
+
+                        }
+
+                        break;
                 }
 
             return Reporte;

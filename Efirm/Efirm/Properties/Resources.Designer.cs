@@ -411,6 +411,24 @@ namespace Efirm.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+        ///	xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; elementFormDefault=&quot;qualified&quot;&gt;
+        ///	&lt;xsd:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+        ///		schemaLocation=&quot;xmldsig-core-schema.xsd&quot;/&gt;
+        ///	&lt;xsd:simpleType name=&quot;ambiente&quot;&gt;
+        ///		&lt;xsd:annotation&gt;
+        ///			&lt;xsd:documentation&gt;Desarrollo o produccion depende de en cual ambiente se genere el comprobante.&lt;/xsd:documentation&gt;
+        ///		&lt;/xsd:annotation&gt;
+        ///		&lt;xsd:restriction base=&quot;xsd:s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Liquidacion_Compra_V_1_1_0 {
+            get {
+                return ResourceManager.GetString("Liquidacion_Compra_V_1_1_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap menu_128x128 {

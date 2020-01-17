@@ -117,23 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="comprobanteRetencion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\xsd\comprobanteRetencion.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="guiaRemision" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\xsd\guiaRemision.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="notaCredito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\xsd\notaCredito.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="notaDebito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\xsd\notaDebito.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Factura_V_2_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Factura_V_2_1_0.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Liquidacion_Compra_V_1_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\xsd\Liquidacion_Compra_V_1_1_0.xsd;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
+  <metadata name="bindingSourceInfoAdici.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

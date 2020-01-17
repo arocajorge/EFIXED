@@ -8,6 +8,7 @@ using FirmElect.Info.class_sri.GuiaRemision;
 using FirmElect.Info.class_sri.Retencion;
 using FirmElect.Info.class_sri.NotaCredito;
 using FirmElect.Info.class_sri.NotaDebito;
+using FirmElect.Info.class_sri.LiquidacionCompra;
 
 namespace FirmElect.Info
 {
@@ -24,6 +25,8 @@ namespace FirmElect.Info
         public notaDebito cbteDeb { get; set; }
         public guiaRemision cbtGR { get; set; }
         public factura cbtFacruraR { get; set; }
+        public liquidacionCompra cbte_liq { get; set; }
+
         public Boolean Checked { get; set; }
         public string xml { get; set; }
 
@@ -90,6 +93,15 @@ namespace FirmElect.Info
             cbteRet = _cbteRet;
 
         }
+        public fx_GeneradorXML_Comprobante_Info(string _IdComprobante, DateTime _Fecha, eTipoComprobante _TipoCbte
+                  , string _Observacion, liquidacionCompra _cbteRet)
+        {
+            IdComprobante = _IdComprobante;
+            Fecha = _Fecha;
+            TipoCbte = _TipoCbte;
+            Observacion = _Observacion;
+            cbte_liq = _cbteRet;
 
+        }
     }
 }

@@ -53,6 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Rpt_Ride_GEN_Liquidacion.cs" />
+    <Compile Include="IRpt_Ride_liquidacion.cs" />
+    <Compile Include="xRpt_liquidacion_compraGen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xRpt_liquidacion_compraGen.Designer.cs">
+      <DependentUpon>xRpt_liquidacion_compraGen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xRpt_liquidacion_compra_Gen_DatosAdicionales.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xRpt_liquidacion_compra_Gen_DatosAdicionales.Designer.cs">
+      <DependentUpon>xRpt_liquidacion_compra_Gen_DatosAdicionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xRpt_liquidacion_compra_Gen_Forma_Pago.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xRpt_liquidacion_compra_Gen_Forma_Pago.Designer.cs">
+      <DependentUpon>xRpt_liquidacion_compra_Gen_Forma_Pago.cs</DependentUpon>
+    </Compile>
     <Compile Include="IRpt_Ride_CbteRetencion.cs" />
     <Compile Include="IRpt_Ride_Factura.cs" />
     <Compile Include="IRpt_Ride_Guia_Remis.cs" />
@@ -216,6 +236,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="xRpt_liquidacion_compraGen.resx">
+      <DependentUpon>xRpt_liquidacion_compraGen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xRpt_liquidacion_compra_Gen_DatosAdicionales.resx">
+      <DependentUpon>xRpt_liquidacion_compra_Gen_DatosAdicionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xRpt_liquidacion_compra_Gen_Forma_Pago.resx">
+      <DependentUpon>xRpt_liquidacion_compra_Gen_Forma_Pago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="xRpt_Ride_ERROR.resx">
       <DependentUpon>xRpt_Ride_ERROR.cs</DependentUpon>
@@ -289,6 +318,7 @@
     <None Include="Properties\DataSources\FirmElect.Info.class_sri.Factura_V2.pagosPago.datasource" />
     <None Include="Properties\DataSources\FirmElect.Info.class_sri.Factura_V2.pagosPago_info.datasource" />
     <None Include="Properties\DataSources\FirmElect.Info.class_sri.GuiaRemision.guiaRemision_Ride_Info.datasource" />
+    <None Include="Properties\DataSources\FirmElect.Info.class_sri.LiquidacionCompra.liquidacion_compra_Ride_Info.datasource" />
     <None Include="Properties\DataSources\FirmElect.Info.class_sri.NotaCredito.notaCredito.datasource" />
     <None Include="Properties\DataSources\FirmElect.Info.class_sri.NotaCredito.notaCreditoCampoAdicional.datasource" />
     <None Include="Properties\DataSources\FirmElect.Info.class_sri.NotaCredito.notaCreditoDetalle.datasource" />

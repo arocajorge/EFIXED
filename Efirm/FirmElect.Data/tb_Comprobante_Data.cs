@@ -16,7 +16,7 @@ using FirmElect.Info.class_sri.Retencion;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-
+using FirmElect.Info.class_sri.LiquidacionCompra;
 namespace FirmElect.Data
 {
    public class tb_Comprobante_Data
@@ -1438,8 +1438,7 @@ namespace FirmElect.Data
        }
 
 
-       public FirmElect.Info.class_sri.Factura_V2.factura_Ride_Info consultar_Factura_ride(int IdEmpresa, string IdComprobante, string IdTipoDocumento
-  , string IdEstado_cbte, ref string mensajeErrorOut)
+       public FirmElect.Info.class_sri.Factura_V2.factura_Ride_Info consultar_Factura_ride(int IdEmpresa, string IdComprobante, string IdTipoDocumento, string IdEstado_cbte, ref string mensajeErrorOut)
        {
 
            try
@@ -1538,11 +1537,11 @@ namespace FirmElect.Data
                if (InfoFactura_SRI_Ride.factura.infoFactura.pagos.Count != 0)
                {
 
-                   List<pagosPago> lista = new List<pagosPago>();
+                   List<FirmElect.Info.class_sri.Factura_V2.pagosPago> lista = new List<FirmElect.Info.class_sri.Factura_V2.pagosPago>();
                    foreach (var item in InfoFactura_SRI_Ride.factura.infoFactura.pagos)
                    {
                        tb_FormaPago_info InfoFormaPago = new tb_FormaPago_info();
-                       pagosPago_info Info_FormaPago = new pagosPago_info();
+                       FirmElect.Info.class_sri.Factura_V2.pagosPago_info Info_FormaPago = new FirmElect.Info.class_sri.Factura_V2.pagosPago_info();
                        InfoFormaPago = oData_FormaPago.Get_Info_FormaPago(item.formaPago, ref mensaje);
                        Info_FormaPago.formaPago.formaPago = item.formaPago;
                        Info_FormaPago.formaPago.total = item.total;
@@ -2221,6 +2220,142 @@ namespace FirmElect.Data
                return new List<tb_Comprobante_Info>();
            }
        }
+
+
+
+
+       public FirmElect.Info.class_sri.LiquidacionCompra.liquidacion_compra_Ride_Info consultar_liquidacion_compra_ride(int IdEmpresa, string IdComprobante, string IdTipoDocumento, string IdEstado_cbte, ref string mensajeErrorOut)
+       {
+
+           try
+           {
+               DateTime sFechaAuto = DateTime.Now;
+               string sNum_Autorizacion = "";
+
+
+               tb_Comprobante_Info InfoCbte = new tb_Comprobante_Info();
+               tb_FormaPago_Data oData_FormaPago = new tb_FormaPago_Data();
+               Info.class_sri.LiquidacionCompra.liquidacion_compra_Ride_Info InfoFactura_SRI_Ride = new liquidacion_compra_Ride_Info();
+               liquidacionCompra InfoFactura_SRI = new liquidacionCompra();
+
+               InfoCbte = this.consultar(IdEmpresa, IdComprobante, IdTipoDocumento, IdEstado_cbte, ref mensajeErrorOut);
+
+               //leyendo el xml de la base 
+               XmlDocument xmlComprobanteOrigen = new XmlDocument();
+               xmlComprobanteOrigen.Load(new StringReader(InfoCbte.s_XML));
+
+
+               //ENCONTRANDO EL NODO TOKEN CON ESTE SE FIRMARA
+
+               XmlNode xmlNode_f;
+               XmlNode xmlNode_N_Auto;
+
+
+               XmlElement root = xmlComprobanteOrigen.DocumentElement;
+               xmlNode_f = root.SelectSingleNode("//fechaAutorizacion");
+
+               if (xmlNode_f != null)// es un xml q fue recibido y tiene soap
+               {
+                   sFechaAuto = Convert.ToDateTime(xmlNode_f.FirstChild.Value);
+
+                   xmlNode_N_Auto = root.SelectSingleNode("//numeroAutorizacion");
+                   if (xmlNode_N_Auto == null) // no esta autorizado
+                   {
+                       sNum_Autorizacion = "NO AUTORIZADO";
+                   }
+                   else
+                   {
+                       sNum_Autorizacion = xmlNode_N_Auto.FirstChild.Value;
+                   }
+
+                   string sXml_a_descerializar;
+                   sXml_a_descerializar = Quitar_a_xml_CDATA_y_Signature(xmlComprobanteOrigen.GetElementsByTagName("comprobante")[0].InnerXml, ref mensajeErrorOut);
+
+                   XmlDocument xmlCbte_a_descr = new XmlDocument();
+                   xmlCbte_a_descr.Load(new StringReader(sXml_a_descerializar));
+
+                   InfoFactura_SRI = (liquidacionCompra)Deserialize(xmlCbte_a_descr, InfoFactura_SRI.GetType());
+
+               }
+               else
+               {
+                   InfoFactura_SRI = (liquidacionCompra)Deserialize(xmlComprobanteOrigen, InfoFactura_SRI.GetType());
+               }
+
+
+               InfoFactura_SRI_Ride.factura = InfoFactura_SRI;
+               InfoFactura_SRI_Ride.Fecha_Autorizacion = sFechaAuto;
+
+               if (InfoFactura_SRI_Ride.factura.infoAdicional.Count != 0)
+               {
+                   foreach (var item in InfoFactura_SRI_Ride.factura.infoAdicional)
+                   {
+                       if (item.nombre == "REFERENCIA")
+                       {
+                           InfoFactura_SRI_Ride.REFERENCIA = item.Value;
+                       }
+                       if (item.nombre == "MAIL")
+                       {
+                           InfoFactura_SRI_Ride.MAIL = item.Value;
+                       }
+                       if (item.nombre == "OBRA")
+                       {
+                           InfoFactura_SRI_Ride.OBRA = item.Value;
+                       }
+                       if (item.nombre == "FORMA_PAGO")
+                       {
+                           InfoFactura_SRI_Ride.FORMA_PAGO = item.Value;
+                       }
+                       if (item.nombre == "FECHA_VENCI")
+                       {
+                           InfoFactura_SRI_Ride.FECHA_VENCI = item.Value;
+                       }
+                       if (item.nombre == "observaciones")
+                       {
+                           InfoFactura_SRI_Ride.observaciones = item.Value;
+                       }
+                       if (item.nombre == "DIRECCION_CLIENTE")
+                       {
+                           InfoFactura_SRI_Ride.DIRECCION_CLIENTE = item.Value;
+                       }
+                   }
+               }
+               if (InfoFactura_SRI_Ride.factura.infoLiquidacionCompra.pagos.Count != 0)
+               {
+
+                   List<FirmElect.Info.class_sri.LiquidacionCompra.pagosPago> lista = new List<FirmElect.Info.class_sri.LiquidacionCompra.pagosPago>();
+                   foreach (var item in InfoFactura_SRI_Ride.factura.infoLiquidacionCompra.pagos)
+                   {
+                       tb_FormaPago_info InfoFormaPago = new tb_FormaPago_info();
+                       FirmElect.Info.class_sri.LiquidacionCompra.pagosPago_info Info_FormaPago = new FirmElect.Info.class_sri.LiquidacionCompra.pagosPago_info();
+                       InfoFormaPago = oData_FormaPago.Get_Info_FormaPago(item.formaPago, ref mensaje);
+                       Info_FormaPago.formaPago.formaPago = item.formaPago;
+                       Info_FormaPago.formaPago.total = item.total;
+                       Info_FormaPago.formaPago.plazo = item.plazo;
+                       Info_FormaPago.formaPago.unidadTiempo = item.unidadTiempo;
+                       Info_FormaPago.Tipo_Forma_Pago.IdFormaPago = InfoFormaPago.IdFormaPago;
+                       Info_FormaPago.Tipo_Forma_Pago.nombre = InfoFormaPago.nombre;
+
+                       InfoFactura_SRI_Ride.List_FormaPago.Add(Info_FormaPago);
+                   }
+               }
+               InfoFactura_SRI_Ride.Num_Autorizacion = sNum_Autorizacion;
+
+               mensajeErrorOut = "Proceso OK";
+
+               return InfoFactura_SRI_Ride;
+           }
+           catch (Exception ex)
+           {
+               string arreglo = ToString();
+               tb_sis_Log_Error_Vzen_Data oDataLog = new tb_sis_Log_Error_Vzen_Data();
+               tb_sis_Log_Error_Vzen_Info Log_Error_sis = new tb_sis_Log_Error_Vzen_Info(ex.ToString(), eTipoError.ERROR, arreglo, "", "", "", "", "", DateTime.Now);
+               oDataLog.Guardar_Log_Error(Log_Error_sis, ref mensajeErrorOut);
+               mensajeErrorOut = ex.InnerException + " " + ex.Message;
+               return new liquidacion_compra_Ride_Info();
+           }
+       }
+
 
    }
 }

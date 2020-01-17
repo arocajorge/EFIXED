@@ -5,14 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0a39e8d214324518a2038533d0aaa59d" Name="Diagrama1" ZoomLevel="23">
-        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_factura" Width="1.5" PointX="7.9202789384500489" PointY="19.643828922716821" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_factura_detalle" Width="1.5" PointX="7.9426182359189808" PointY="26.722330433652889" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_factura_impuestos" Width="1.5" PointX="5.65795256647186" PointY="24.943312611870148" />
-        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_guia_remision" Width="1.5" PointX="1.1653942694726374" PointY="10.416092430435164" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_guia_remision_detalle" Width="1.5" PointX="2.3464581940073792" PointY="9.0356951547021485" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_guia_remision_x_factura" Width="1.5" PointX="3.7865076660115777" PointY="20.591861496023768" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_nota_credito" Width="1.5" PointX="0.74241804924906141" PointY="1.7811535903164901" />
-        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_nota_credito_detalle" Width="1.5" PointX="11.723965538537113" PointY="17.553936206527958" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_nota_credito_impuestos" Width="1.5" PointX="3.2464694060601618" PointY="14.956633440664334" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_nota_debito" Width="1.5" PointX="3.4515201893875" PointY="15.676789127139742" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_nota_debito_detalle" Width="1.5" PointX="8.1474316828639388" PointY="11.550571953668525" />
@@ -20,6 +17,11 @@
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_retencion" Width="1.5" PointX="3.8158160018808287" PointY="23.945418845836734" />
         <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_retencion_detalle" Width="1.5" PointX="4.8480357047394085" PointY="23.470975305638731" />
         <EntityTypeShape EntityType="Model_conexion_efixed.fa_elec_registros_generados" Width="1.5" PointX="8.4518506491798213" PointY="17.125140078889736" />
+        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_factura" Width="1.5" PointX="0.68103715436581391" PointY="21.472338000998057" />
+        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_guia_remision" Width="1.5" PointX="10.795721584370231" PointY="3.1594733908583752" />
+        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_nota_credito_detalle" Width="1.5" PointX="4.4819887394467317" PointY="21.740164960613551" />
+        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_liquidacion_compra" Width="1.5" PointX="10.852829072090252" PointY="21.67816437300209" />
+        <EntityTypeShape EntityType="Model_conexion_efixed.vwfe_liquidacion_compra_det" Width="1.5" PointX="2.2025679732684829" PointY="8.6977701823682381" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

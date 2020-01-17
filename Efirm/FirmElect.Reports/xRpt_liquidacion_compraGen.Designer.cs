@@ -1,6 +1,6 @@
 ﻿namespace FirmElect.Reports
 {
-    partial class xRpt_Ride_Factura_Gen
+    partial class xRpt_liquidacion_compraGen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xRpt_Ride_Factura_Gen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xRpt_liquidacion_compraGen));
             DevExpress.XtraPrinting.BarCode.CodabarGenerator codabarGenerator1 = new DevExpress.XtraPrinting.BarCode.CodabarGenerator();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
@@ -108,6 +108,7 @@
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.DetailReport1 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail2 = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel50 = new DevExpress.XtraReports.UI.XRLabel();
@@ -188,18 +189,16 @@
             this.SubTotalIva = new DevExpress.XtraReports.UI.CalculatedField();
             this.c_iva = new DevExpress.XtraReports.UI.CalculatedField();
             this.entidad_lucro = new DevExpress.XtraReports.UI.CalculatedField();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.xRpt_Ride_Factura_Gen_Forma_Pago1 = new FirmElect.Reports.xRpt_Ride_Factura_Gen_Forma_Pago();
+            this.xRpt_liquidacion_compraGen_Forma_Pago1 = new FirmElect.Reports.xRpt_liquidacion_compra_Gen_Forma_Pago();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xRpt_Ride_Factura_Gen_Forma_Pago1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xRpt_liquidacion_compraGen_Forma_Pago1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
-            this.Detail.Expanded = false;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -286,7 +285,7 @@
             // xrLabel29
             // 
             this.xrLabel29.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.direccionComprador")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.direccionProveedor")});
             this.xrLabel29.Font = new System.Drawing.Font("Verdana", 6.75F);
             this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(65.41672F, 379.0416F);
             this.xrLabel29.Name = "xrLabel29";
@@ -489,14 +488,14 @@
             // xrLabel22
             // 
             this.xrLabel22.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.identificacionComprador")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.identificacionProveedor")});
             this.xrLabel22.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(613.5416F, 346.0417F);
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel22.SizeF = new System.Drawing.SizeF(165.3749F, 23F);
             this.xrLabel22.StylePriority.UseFont = false;
-            this.xrLabel22.Text = "[factura.infoFactura.identificacionComprador]";
+            this.xrLabel22.Text = "xrLabel22";
             // 
             // xrLabel20
             // 
@@ -513,21 +512,21 @@
             // xrLabel18
             // 
             this.xrLabel18.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.fechaEmision")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.fechaEmision")});
             this.xrLabel18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(94.41673F, 397.0417F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(166.2498F, 15.00003F);
             this.xrLabel18.StylePriority.UseFont = false;
-            this.xrLabel18.Text = "[factura.infoFactura.fechaEmision]";
+            this.xrLabel18.Text = "xrLabel18";
             // 
             // xrLabel16
             // 
             this.xrLabel16.CanGrow = false;
             this.xrLabel16.CanShrink = true;
             this.xrLabel16.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.razonSocialComprador")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.razonSocialProveedor")});
             this.xrLabel16.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(125.8751F, 346.0417F);
             this.xrLabel16.Multiline = true;
@@ -804,7 +803,7 @@
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel9.SizeF = new System.Drawing.SizeF(209.8745F, 23.00001F);
             this.xrLabel9.StylePriority.UseFont = false;
-            this.xrLabel9.Text = "F A C T U R A.";
+            this.xrLabel9.Text = "LIQUIDACION DE COMPRA";
             // 
             // xrLabel2
             // 
@@ -864,6 +863,7 @@
             this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail1});
             this.DetailReport.DataMember = "factura.detalles";
+            this.DetailReport.DataSource = this.bindingSource2;
             this.DetailReport.Level = 2;
             this.DetailReport.Name = "DetailReport";
             // 
@@ -980,10 +980,15 @@
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell14.Weight = 0.300693178470642D;
             // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataSource = typeof(FirmElect.Info.class_sri.LiquidacionCompra.liquidacion_compra_Ride_Info);
+            // 
             // DetailReport1
             // 
             this.DetailReport1.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail2});
+            this.DetailReport1.DataSource = this.bindingSource2;
             this.DetailReport1.Level = 1;
             this.DetailReport1.Name = "DetailReport1";
             this.DetailReport1.Visible = false;
@@ -999,7 +1004,6 @@
             this.xrLabel41,
             this.xrLabel40,
             this.xrLabel38});
-            this.Detail2.Expanded = false;
             this.Detail2.HeightF = 26.04167F;
             this.Detail2.Name = "Detail2";
             this.Detail2.Visible = false;
@@ -1088,7 +1092,7 @@
             // 
             this.DetailReport2.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail3});
-            this.DetailReport2.DataMember = "factura.infoFactura.totalConImpuestos";
+            this.DetailReport2.DataSource = this.bindingSource2;
             this.DetailReport2.Level = 0;
             this.DetailReport2.Name = "DetailReport2";
             // 
@@ -1212,7 +1216,7 @@
             // 
             this.xrSubreportForma_Pago.LocationFloat = new DevExpress.Utils.PointFloat(2.083373F, 5.00001F);
             this.xrSubreportForma_Pago.Name = "xrSubreportForma_Pago";
-            this.xrSubreportForma_Pago.ReportSource = new FirmElect.Reports.xRpt_Ride_Factura_Gen_Forma_Pago();
+            this.xrSubreportForma_Pago.ReportSource = new FirmElect.Reports.xRpt_liquidacion_compra_Gen_Forma_Pago();
             this.xrSubreportForma_Pago.SizeF = new System.Drawing.SizeF(410.8334F, 87.94321F);
             this.xrSubreportForma_Pago.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrSubreportForma_Pago_BeforePrint);
             // 
@@ -1220,7 +1224,7 @@
             // 
             this.xrSubreportDatosAdicionales.LocationFloat = new DevExpress.Utils.PointFloat(2.083373F, 161.8862F);
             this.xrSubreportDatosAdicionales.Name = "xrSubreportDatosAdicionales";
-            this.xrSubreportDatosAdicionales.ReportSource = new FirmElect.Reports.xRpt_Ride_Factura_Gen_DatosAdicionales();
+            this.xrSubreportDatosAdicionales.ReportSource = new FirmElect.Reports.xRpt_liquidacion_compra_Gen_DatosAdicionales();
             this.xrSubreportDatosAdicionales.SizeF = new System.Drawing.SizeF(410.8334F, 73.6288F);
             this.xrSubreportDatosAdicionales.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrSubreportDatosAdicionales_BeforePrint);
             // 
@@ -1404,12 +1408,12 @@
             // xrTableCell28
             // 
             this.xrTableCell28.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.totalSinImpuestos", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.totalSinImpuestos", "{0:n2}")});
             this.xrTableCell28.Font = new System.Drawing.Font("Verdana", 6.75F);
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseFont = false;
             this.xrTableCell28.StylePriority.UseTextAlignment = false;
-            this.xrTableCell28.Text = "[factura.infoFactura.totalSinImpuestos]";
+            this.xrTableCell28.Text = "xrTableCell28";
             this.xrTableCell28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell28.Weight = 0.90513412019946338D;
             // 
@@ -1432,7 +1436,7 @@
             // xrTableCell18
             // 
             this.xrTableCell18.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.totalDescuento", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.totalDescuento", "{0:n2}")});
             this.xrTableCell18.Font = new System.Drawing.Font("Verdana", 6.75F);
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseFont = false;
@@ -1440,7 +1444,7 @@
             xrSummary5.FormatString = "{0:#.00}";
             xrSummary5.IgnoreNullValues = true;
             this.xrTableCell18.Summary = xrSummary5;
-            this.xrTableCell18.Text = "[factura.infoFactura.totalDescuento]";
+            this.xrTableCell18.Text = "xrTableCell18";
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell18.Weight = 0.90513412019946338D;
             // 
@@ -1556,13 +1560,11 @@
             // 
             // xrTableCell36
             // 
-            this.xrTableCell36.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.propina", "{0:n2}")});
             this.xrTableCell36.Font = new System.Drawing.Font("Verdana", 6.75F);
             this.xrTableCell36.Name = "xrTableCell36";
             this.xrTableCell36.StylePriority.UseFont = false;
             this.xrTableCell36.StylePriority.UseTextAlignment = false;
-            this.xrTableCell36.Text = "xrTableCell36";
+            this.xrTableCell36.Text = "0.00";
             this.xrTableCell36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell36.Weight = 0.90513412019946338D;
             // 
@@ -1585,12 +1587,12 @@
             // xrTableCell38
             // 
             this.xrTableCell38.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoFactura.importeTotal", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "factura.infoLiquidacionCompra.importeTotal", "{0:n2}")});
             this.xrTableCell38.Font = new System.Drawing.Font("Verdana", 6.75F);
             this.xrTableCell38.Name = "xrTableCell38";
             this.xrTableCell38.StylePriority.UseFont = false;
             this.xrTableCell38.StylePriority.UseTextAlignment = false;
-            this.xrTableCell38.Text = "[factura.infoFactura.importeTotal]";
+            this.xrTableCell38.Text = "xrTableCell38";
             this.xrTableCell38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell38.Weight = 0.8184215451047917D;
             // 
@@ -1720,11 +1722,7 @@
             this.entidad_lucro.Expression = resources.GetString("entidad_lucro.Expression");
             this.entidad_lucro.Name = "entidad_lucro";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(FirmElect.Info.class_sri.Factura_V2.factura_Ride_Info);
-            // 
-            // xRpt_Ride_Factura_Gen
+            // xRpt_liquidacion_compraGen
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
@@ -1757,7 +1755,7 @@
             this.xrCrossBandBox3,
             this.xrCrossBandBox2,
             this.xrCrossBandBox1});
-            this.DataSource = this.bindingSource1;
+            this.DataSource = this.bindingSource2;
             this.FormattingRuleSheet.AddRange(new DevExpress.XtraReports.UI.FormattingRule[] {
             this.formattingRule1});
             this.Margins = new System.Drawing.Printing.Margins(32, 27, 24, 13);
@@ -1771,9 +1769,9 @@
             this.Version = "12.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xRpt_Ride_Factura_Gen_Forma_Pago1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xRpt_liquidacion_compraGen_Forma_Pago1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -1783,7 +1781,6 @@
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
         private DevExpress.XtraReports.UI.XRCrossBandBox xrCrossBandBox1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
@@ -1929,8 +1926,9 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel31;
         public DevExpress.XtraReports.UI.CalculatedField entidad_lucro;
         public DevExpress.XtraReports.UI.XRSubreport xrSubreportDatosAdicionales;
-        private xRpt_Ride_Factura_Gen_Forma_Pago xRpt_Ride_Factura_Gen_Forma_Pago1;
+        private xRpt_liquidacion_compra_Gen_Forma_Pago xRpt_liquidacion_compraGen_Forma_Pago1;
         private DevExpress.XtraReports.UI.XRSubreport xrSubreportForma_Pago;
         private DevExpress.XtraReports.UI.XRLabel xrLabel32;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

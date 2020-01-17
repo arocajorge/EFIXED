@@ -188,7 +188,8 @@ public enum eTipoComprobante
     NotaDeb,
     Guia,
     Retencion,
-    FacturaRembolso
+    FacturaRembolso,
+    LiqComp
 }
 
 
@@ -199,7 +200,8 @@ public enum eTipoCodComprobante
     NTD,
     GUI,
     RET,
-    FACR
+    FACR,
+    LIQC
 }
 
 public enum eTipoMensaje

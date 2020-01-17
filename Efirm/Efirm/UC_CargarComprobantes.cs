@@ -18,6 +18,7 @@ using FirmElect.Info.class_sri.GuiaRemision;
 using FirmElect.Info.class_sri.NotaCredito;
 using FirmElect.Info.class_sri.NotaDebito;
 using FirmElect.Info.class_sri.Retencion;
+using FirmElect.Info.class_sri.LiquidacionCompra;
 using System.Xml.Serialization;
 using System.Collections;
 using System.Threading;
@@ -52,6 +53,7 @@ namespace Efirm
         List<notaCredito> listadoNC = null;
         List<notaDebito> listadoND = null;
         List<guiaRemision> listadoGR = null;
+        List<liquidacionCompra> listado_liq = null;
 
         //instanacia de clase para obtener la configuracion del horario
         fx_horario_Info horario = new fx_horario_Info();
@@ -62,6 +64,7 @@ namespace Efirm
         fx_Comprobantes_generados_Bus ObuscComp = null;
         fx_GuiaRemision_Bus OBusGuia = null;
         fx_NotaDebito_Bus OBusND = null;
+        fx_liquidacion_compra_Bus oBusLiq = null;
 
         fx_horario_Bus ObusHorario = null;
      
@@ -403,6 +406,32 @@ namespace Efirm
                             }
                             catch (Exception ex) { MessageBox.Show(ex.Message); }
                         }
+
+
+                        else if (item.TipoCbte == eTipoComprobante.LiqComp)
+                        {
+                            try
+                            {
+                                sIdCbteFact = sIdCbteFact = item.cbte_liq.infoTributaria.razonSocial.Substring(0, 3) + "-" + eTipoCodComprobante.LIQC + "-" + item.cbte_liq.infoTributaria.estab + "-" + item.cbte_liq.infoTributaria.ptoEmi + "-" + item.cbte_liq.infoTributaria.secuencial;
+                                XmlSerializerNamespaces NamespaceObject = new XmlSerializerNamespaces();
+                                NamespaceObject.Add("", "");
+                                XmlSerializer mySerializer = new XmlSerializer(typeof(liquidacionCompra));
+
+                                myWriter = new StreamWriter(txtRuta.Text + sIdCbteFact + ".xml");
+
+
+
+                                mySerializer.Serialize(myWriter, item.cbte_liq, NamespaceObject);
+                                myWriter.Close();
+                                // GRABAR COMP
+                                ObuscComp = new fx_Comprobantes_generados_Bus();
+                                fx_Comprobante_generados_Info comprobante = new fx_Comprobante_generados_Info();
+                                comprobante.IdRegistro = sIdCbteFact;
+                                comprobante.Estado = "A";
+                                ObuscComp.GuardarComprobantes_generados_FX(comprobante);
+                            }
+                            catch (Exception ex) { MessageBox.Show(ex.Message); }
+                        }
                     }
                 }
                 listado_cbtes_info = new BindingList<fx_GeneradorXML_Comprobante_Info>();
@@ -546,6 +575,25 @@ namespace Efirm
                 }
 
                 #endregion
+
+
+                #region listados de liquidacion compra
+                oBusLiq = new fx_liquidacion_compra_Bus();
+                listado_liq = new List<liquidacionCompra>();
+                listado_liq = oBusLiq.GenerarXmlFactura(fechaI, fchaF, ConexionDbcliente, OconEfirm, FormatoFechaSRI, formatoFechaDB, Cliente);
+                foreach (var item in listado_liq)
+                {
+                    DateTime fecha;
+                    try
+                    {
+                        listado_cbtes_info.Add(new fx_GeneradorXML_Comprobante_Info(item.infoTributaria.secuencial
+                             , Convert.ToDateTime(item.infoLiquidacionCompra.fechaEmision), eTipoComprobante.LiqComp
+                             , item.infoLiquidacionCompra.razonSocialProveedor, item));
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+                }
+                #endregion
+
 
                 if (listado_cbtes_info == null)
                 {

@@ -788,6 +788,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Liquidacion_Compra_V_1_1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSEfirm_cbte\Efirm.WSEfirm_cbte.consultar_listado_comprobantesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

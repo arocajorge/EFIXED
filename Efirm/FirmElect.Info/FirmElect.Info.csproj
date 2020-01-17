@@ -70,6 +70,17 @@
     <Compile Include="class_sri\Factura_V2\rubro.cs" />
     <Compile Include="class_sri\GuiaRemision\guiaRemision.cs" />
     <Compile Include="class_sri\GuiaRemision\guiaRemision_Ride_Info.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\detalleImpuestosDetalleImpuesto.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\infoTributaria.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\liquidacionCompraCampoAdicional.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\liquidacionCompraDetalle.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\liquidacionCompraDetalleDetAdicional.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\liquidacionCompraInfoLiquidacionCompraTotalImpuesto.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\liquidacion_compra_Ride_Info.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\liquidacionCompra.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\pagosPago.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\pagosPago_info.cs" />
+    <Compile Include="class_sri\LiquidacionCompra\reembolsosReembolsoDetalle.cs" />
     <Compile Include="class_sri\NotaCredito\notaCredito.cs" />
     <Compile Include="class_sri\NotaCredito\notaCredito_Ride_Info.cs" />
     <Compile Include="class_sri\NotaDebito\notaDebito.cs" />
@@ -163,6 +174,9 @@
     <None Include="Resources\Factura_V_2_1_0.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\Liquidacion_Compra_V_1_1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="xsd\comprobanteRetencion.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -170,6 +184,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="xsd\guiaRemision.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xsd\Liquidacion_Compra_V_1_1_0.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="xsd\notaCredito.xsd">

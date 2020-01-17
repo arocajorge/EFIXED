@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Conte_con_efixed.edmx</DependentUpon>
     </Compile>
+    <Compile Include="fx_GeneradorXML_ILiquidacionComp_Data.cs" />
     <Compile Include="Factura.cs">
       <DependentUpon>Model_facturacion_eventos.tt</DependentUpon>
     </Compile>
@@ -158,6 +159,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_facturacion_eventos.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Proceso_efixed\fx_Generador_XML_LiquidacionComp_Fixed.cs" />
     <Compile Include="Proceso_efixed\fx_GeneradorXML_NotaDebito_Fixed.cs" />
     <Compile Include="Proceso_efixed\fx_Generador_XML_Guia_Fixed.cs" />
     <Compile Include="Proceso_efixed\fx_GeneradorXML_NotaCredito_Fixed.cs" />
@@ -344,6 +346,12 @@
       <DependentUpon>Conte_con_efixed.tt</DependentUpon>
     </Compile>
     <Compile Include="vwfe_guia_remision_x_factura.cs">
+      <DependentUpon>Conte_con_efixed.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwfe_liquidacion_compra.cs">
+      <DependentUpon>Conte_con_efixed.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwfe_liquidacion_compra_det.cs">
       <DependentUpon>Conte_con_efixed.tt</DependentUpon>
     </Compile>
     <Compile Include="vwfe_nota_credito.cs">
