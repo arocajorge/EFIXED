@@ -81,7 +81,7 @@ namespace FirmElect.Data.Proceso_efixed
                                 if (item_det.re_tipoRet != "RTF")
                                 {
                                     if(item_det.re_Porcen_retencion==10)
-                                        imp.codigoRetencion = "09";
+                                        imp.codigoRetencion = "9";
                                     if (item_det.re_Porcen_retencion == 20)
                                         imp.codigoRetencion = "10";
                                     if (item_det.re_Porcen_retencion == 30)

@@ -221,15 +221,16 @@ namespace FirmElect.Data
 
                         case "03":
 
-                            serie1 = InfoCbte.IdComprobante.Substring(4, 3);
-                            serie2 = InfoCbte.IdComprobante.Substring(8, 3);
+                            serie1 = InfoCbte.IdComprobante.Substring(3, 3);
+                            serie2 = InfoCbte.IdComprobante.Substring(7, 3);
                             string seri=serie1+"-"+serie2;
-                            NumDocumento = InfoCbte.IdComprobante.Substring(12, 9);
-                            SQL = "  update cp_orden_giro set fecha_autorizacion='"+Fecha_cambiada_autorizacion+"', Num_Autorizacion='"+InfoCbte.Numero_Autorizacion+"'"
+                            NumDocumento = InfoCbte.IdComprobante.Substring(11, 9);
+                            SQL = "  update cp_orden_giro set fecha_autorizacion='" + InfoCbte.FechaAutorizacion + "', Num_Autorizacion='" + InfoCbte.Numero_Autorizacion + "'"
                          +"FROM      dbo.cp_orden_giro INNER JOIN"
-                         + "dbo.cp_proveedor ON dbo.cp_orden_giro.IdEmpresa = dbo.cp_proveedor.IdEmpresa AND dbo.cp_orden_giro.IdProveedor = dbo.cp_proveedor.IdProveedor INNER JOIN"
-                         +"dbo.tb_empresa ON dbo.cp_proveedor.IdEmpresa = dbo.tb_empresa.IdEmpresa"
-                         + "where cp_orden_giro.co_serie='" + seri + "' and cp_orden_giro.co_factura ='" + NumDocumento + "' and  tb_empresa.em_ruc='" + InfoEmpresa.RUC + "' and tb_persona.pe_cedulaRuc='" + InfoCbte.Cedula_Ruc+ "'";
+                         + " dbo.cp_proveedor ON dbo.cp_orden_giro.IdEmpresa = dbo.cp_proveedor.IdEmpresa AND dbo.cp_orden_giro.IdProveedor = dbo.cp_proveedor.IdProveedor INNER JOIN"
+                         +" dbo.tb_empresa ON dbo.cp_proveedor.IdEmpresa = dbo.tb_empresa.IdEmpresa"
+                         + " INNER JOIN  dbo.tb_persona ON dbo.cp_proveedor.IdPersona = dbo.tb_persona.IdPersona"
+                         + " where cp_orden_giro.co_serie='" + seri + "' and cp_orden_giro.co_factura ='" + NumDocumento + "' and  tb_empresa.em_ruc='" + InfoEmpresa.RUC + "' and tb_persona.pe_cedulaRuc='" + InfoCbte.Cedula_Ruc+ "'";
 
                             cmd = new SqlCommand(SQL, conexion);
                             reader = cmd.ExecuteReader();
