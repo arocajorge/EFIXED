@@ -216,10 +216,10 @@ namespace FirmElect.Data.Proceso_efixed
 
                    
                 }
-                var lst_f = get_facturas_eventos(FechaIni, FechaFin);
-                if(lst_f!=null)
-                if(lst_f.Count>0)
-                    lista.AddRange(lst_f);
+                //var lst_f = get_facturas_eventos(FechaIni, FechaFin);
+                //if(lst_f!=null)
+                //if(lst_f.Count>0)
+                //    lista.AddRange(lst_f);
                 return lista;
             }
             catch (Exception ex)

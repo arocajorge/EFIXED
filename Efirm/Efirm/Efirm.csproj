@@ -705,7 +705,6 @@
     <EmbeddedResource Include="Frm_comprobantes_generados.resx">
       <DependentUpon>Frm_comprobantes_generados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -759,6 +758,9 @@
     <EmbeddedResource Include="UC_TipoDocumento.resx">
       <DependentUpon>UC_TipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App_.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>

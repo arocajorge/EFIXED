@@ -187,7 +187,8 @@ namespace FirmElect.Data
                                  C.Telefono,
                                 C.cedulaRuc_contri,
                                 C.RazonSocial_Emisor,
-                                C.RUC_Emisor
+                                C.RUC_Emisor,
+                                C.Texto_mensaje
                             };
 
 
@@ -217,6 +218,7 @@ namespace FirmElect.Data
                         infoC.IdCuenta = item.IdCuenta;
                         infoC.MosTrar_icono_Ride = false;
                         infoC.MosTrar_icono_xml = false;
+                        infoC.Texto_mensaje = item.Texto_mensaje;
                         if (item.IdContribuyente != null)
                         {
                             InfoContri.IdContribuyente = (item.IdContribuyente == null) ? 0 : Convert.ToDecimal(item.IdContribuyente);

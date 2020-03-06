@@ -49,9 +49,9 @@ namespace FirmElect.Data.Proceso_efixed
                            myObjectRete.infoTributaria.estab = item.serie1;
                            myObjectRete.infoTributaria.ptoEmi = item.serie2;
                            myObjectRete.infoTributaria.secuencial = Convert.ToString(item.NumRetencion);
-                           myObjectRete.infoTributaria.dirMatriz = item.em_direccion;
+                           myObjectRete.infoTributaria.dirMatriz = item.em_direccion.ToString().Trim();
                            myObjectRete.infoCompRetencion.fechaEmision = string.Format("{0:dd/MM/yyyy}", item.fecha);//.Trim();
-                           myObjectRete.infoCompRetencion.dirEstablecimiento = item.em_direccion;
+                           myObjectRete.infoCompRetencion.dirEstablecimiento = item.em_direccion.ToString().Trim();
                            if (item.ContribuyenteEspecial != "")
                            {
                                myObjectRete.infoCompRetencion.contribuyenteEspecial = item.ContribuyenteEspecial;

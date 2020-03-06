@@ -84,9 +84,9 @@
         <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_Parametro" Width="1.5" PointX="6.9913326199126118" PointY="11.432814707715444" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_comprobante_x_valor" Width="1.5" PointX="7.9231825526446027" PointY="6.2170061349016645" />
-        <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_facturas_eventos" Width="1.5" PointX="11.592258257601531" PointY="31.247088998205534" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.vwfe_liquidacion_compra" Width="1.5" PointX="0.61414711392212062" PointY="25.613203060633133" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.vwfe_liquidacion_compra_det" Width="1.5" PointX="0.22837049524689584" PointY="11.942668607431775" />
+        <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_facturas_eventos" Width="1.5" PointX="1.8686411426722265" PointY="14.431360564395488" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

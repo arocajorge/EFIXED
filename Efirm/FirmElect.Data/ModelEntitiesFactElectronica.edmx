@@ -299,7 +299,30 @@
       [wv_mail_Cuentas_Correo_x_Empresa].[observacion] AS [observacion], 
       [wv_mail_Cuentas_Correo_x_Empresa].[RazonSocial] AS [RazonSocial], 
       [wv_mail_Cuentas_Correo_x_Empresa].[Nombre_cuenta] AS [Nombre_cuenta], 
-      [wv_mail_Cuentas_Correo_x_Empresa].[direccion_correo] AS [direccion_correo]
+      [wv_mail_Cuentas_Correo_x_Empresa].[direccion_correo] AS [direccion_correo], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Password] AS [Password], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[TipoCuenta] AS [TipoCuenta], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Usuario] AS [Usuario], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[ServidorCorreoEntrante] AS [ServidorCorreoEntrante], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[ServidorCorreoSaliente] AS [ServidorCorreoSaliente], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Port_salida] AS [Port_salida], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[port_entrada] AS [port_entrada], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[cta_predeterminada] AS [cta_predeterminada], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[tipo_Seguridad] AS [tipo_Seguridad], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[precisa_conexion_cifrada] AS [precisa_conexion_cifrada], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[enviar_copia_x_cada_mail_enviado] AS [enviar_copia_x_cada_mail_enviado], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[enviar_mail_x_cada_cbte_no_auto] AS [enviar_mail_x_cada_cbte_no_auto], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[cta_mail_para_envio_x_cbte_enviado] AS [cta_mail_para_envio_x_cbte_enviado], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[cta_mail_para_envio_x_cbte_no_auto] AS [cta_mail_para_envio_x_cbte_no_auto], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Usar_Credenciales_x_default_SMTP] AS [Usar_Credenciales_x_default_SMTP], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Tipo_Authenticacion] AS [Tipo_Authenticacion], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Usa_SSL_Conexion_para_Descarga_correo] AS [Usa_SSL_Conexion_para_Descarga_correo], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Guardar_1_copia_de_corre_en_server_mail] AS [Guardar_1_copia_de_corre_en_server_mail], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Borra_server_mail_cada_dias] AS [Borra_server_mail_cada_dias], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Usuario_smtp] AS [Usuario_smtp], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Password_smtp] AS [Password_smtp], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Confirmacion_de_Lectura] AS [Confirmacion_de_Lectura], 
+      [wv_mail_Cuentas_Correo_x_Empresa].[Confirmacion_de_Entrega] AS [Confirmacion_de_Entrega]
       FROM [dbo].[wv_mail_Cuentas_Correo_x_Empresa] AS [wv_mail_Cuentas_Correo_x_Empresa]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_mail_Catalogo_mail_Catalogo_Tipo" Association="DBFacturacion_ElectronicaModel.Store.FK_mail_Catalogo_mail_Catalogo_Tipo">
@@ -683,6 +706,7 @@
           <Property Name="Ambiente" Type="varchar" MaxLength="20" />
           <Property Name="s_xml_bak" Type="varchar(max)" />
           <Property Name="Clave_Acceso" Type="varchar" MaxLength="100" />
+          <Property Name="IdRegistro" Type="numeric" />
         </EntityType>
         <EntityType Name="tb_Comprobante_estado_proceso">
           <Key>
@@ -771,7 +795,7 @@
           <Property Name="Total" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.tb_comprobantes_No_Generados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.tb_comprobantes_No_Generados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="tb_comprobantes_No_Generados">
           <Key>
@@ -793,7 +817,7 @@
           <Property Name="IdEmpresa" Type="int" Nullable="false" />
           <Property Name="cedulaRuc_contri" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="Nom_Contribuyente" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="Mail" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar(max)" />
           <Property Name="Mail_secundario" Type="varchar" MaxLength="100" />
           <Property Name="EsCliente" Type="bit" Nullable="false" />
           <Property Name="EsProveedor" Type="bit" Nullable="false" />
@@ -976,7 +1000,7 @@
           <Property Name="estado" Type="char" Nullable="false" MaxLength="1" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_Comprobante">
           <Key>
@@ -1018,7 +1042,7 @@
           <Property Name="Total" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_Comprobante_Autorizados_Enviados_NoEnviados_mail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobante_Autorizados_Enviados_NoEnviados_mail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_Comprobante_Autorizados_Enviados_NoEnviados_mail">
           <Key>
@@ -1055,7 +1079,7 @@
           <Property Name="Nom_Contribuyente" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_comprobante_pendiente_de_Autorizacion_sri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_comprobante_pendiente_de_Autorizacion_sri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_comprobante_pendiente_de_Autorizacion_sri">
           <Key>
@@ -1093,7 +1117,7 @@
           <Property Name="Nom_Contribuyente" Type="varchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_Comprobante_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobante_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_Comprobante_Tipo">
           <Key>
@@ -1112,7 +1136,7 @@
           <Property Name="RUC" Type="varchar" Nullable="false" MaxLength="1" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_Comprobantes_recibidos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobantes_recibidos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_Comprobantes_recibidos">
           <Key>
@@ -1147,7 +1171,7 @@
           <Property Name="TipoDocumento" Type="varchar" Nullable="false" MaxLength="1" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_mail_Cuentas_Correo_x_mail_Mensaje_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_mail_Cuentas_Correo_x_mail_Mensaje_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_mail_Cuentas_Correo_x_mail_Mensaje_Tipo">
           <Key>
@@ -1163,7 +1187,7 @@
           <Property Name="estado" Type="varchar" MaxLength="1" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vw_Mensaje_x_Contribuyente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Mensaje_x_Contribuyente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vw_Mensaje_x_Contribuyente">
           <Key>
@@ -1215,7 +1239,7 @@
           <Property Name="Para_CCO" Type="varchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vwseg_menu_x_tb_empresa_x_seg_usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwseg_menu_x_tb_empresa_x_seg_usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwseg_menu_x_tb_empresa_x_seg_usuario">
           <Key>
@@ -1236,7 +1260,7 @@
           <Property Name="anular" Type="bit" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vwseg_usuario_x_tb_empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwseg_usuario_x_tb_empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwseg_usuario_x_tb_empresa">
           <Key>
@@ -1253,7 +1277,7 @@
           <Property Name="us_nombre" Type="varchar" Nullable="false" MaxLength="300" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vwSerWeb_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwSerWeb_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwSerWeb_Comprobante">
           <Key>
@@ -1280,7 +1304,7 @@
           <Property Name="Nom_Contribuyente" Type="varchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.vwtb_Comprobante_para_exportar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwtb_Comprobante_para_exportar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwtb_Comprobante_para_exportar">
           <Key>
@@ -1314,7 +1338,7 @@
           <Property Name="Nom_Contribuyente" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBFacturacion_Electronica.dbo.wv_mail_Cuentas_Correo_x_Empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.wv_mail_Cuentas_Correo_x_Empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="wv_mail_Cuentas_Correo_x_Empresa">
           <Key>
@@ -1322,6 +1346,12 @@
             <PropertyRef Name="IdCuenta" />
             <PropertyRef Name="observacion" />
             <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="TipoCuenta" />
+            <PropertyRef Name="Usuario" />
+            <PropertyRef Name="Port_salida" />
+            <PropertyRef Name="port_entrada" />
+            <PropertyRef Name="cta_predeterminada" />
           </Key>
           <Property Name="IdEmpresa" Type="int" Nullable="false" />
           <Property Name="IdCuenta" Type="varchar" Nullable="false" MaxLength="50" />
@@ -1329,6 +1359,29 @@
           <Property Name="RazonSocial" Type="varchar" Nullable="false" MaxLength="300" />
           <Property Name="Nombre_cuenta" Type="varchar" MaxLength="150" />
           <Property Name="direccion_correo" Type="varchar" MaxLength="150" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TipoCuenta" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Usuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ServidorCorreoEntrante" Type="varchar" MaxLength="150" />
+          <Property Name="ServidorCorreoSaliente" Type="varchar" MaxLength="150" />
+          <Property Name="Port_salida" Type="int" Nullable="false" />
+          <Property Name="port_entrada" Type="int" Nullable="false" />
+          <Property Name="cta_predeterminada" Type="bit" Nullable="false" />
+          <Property Name="tipo_Seguridad" Type="varchar" MaxLength="50" />
+          <Property Name="precisa_conexion_cifrada" Type="bit" />
+          <Property Name="enviar_copia_x_cada_mail_enviado" Type="bit" />
+          <Property Name="enviar_mail_x_cada_cbte_no_auto" Type="bit" />
+          <Property Name="cta_mail_para_envio_x_cbte_enviado" Type="varchar" MaxLength="150" />
+          <Property Name="cta_mail_para_envio_x_cbte_no_auto" Type="varchar" MaxLength="150" />
+          <Property Name="Usar_Credenciales_x_default_SMTP" Type="bit" />
+          <Property Name="Tipo_Authenticacion" Type="varchar" MaxLength="50" />
+          <Property Name="Usa_SSL_Conexion_para_Descarga_correo" Type="bit" />
+          <Property Name="Guardar_1_copia_de_corre_en_server_mail" Type="bit" />
+          <Property Name="Borra_server_mail_cada_dias" Type="int" />
+          <Property Name="Usuario_smtp" Type="varchar" MaxLength="50" />
+          <Property Name="Password_smtp" Type="varchar" MaxLength="50" />
+          <Property Name="Confirmacion_de_Lectura" Type="bit" />
+          <Property Name="Confirmacion_de_Entrega" Type="bit" />
         </EntityType>
         <Association Name="FK_mail_Catalogo_mail_Catalogo_Tipo">
           <End Role="mail_Catalogo_Tipo" Type="DBFacturacion_ElectronicaModel.Store.mail_Catalogo_Tipo" Multiplicity="0..1" />
@@ -1797,13 +1850,6 @@
             <Parameter Name="IdEstadoProceso" Mode="In" Type="String" />
             <Parameter Name="CadenaBusqueda" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_consulta_x_Mensaje_x_Pagina" ReturnType="Collection(DBFacturacion_ElectronicaModel.sp_consulta_x_Mensaje_x_Pagina_Result)">
-            <Parameter Name="Pagina" Mode="In" Type="Int32" />
-            <Parameter Name="RegistrosporPagina" Mode="In" Type="Int32" />
-            <Parameter Name="TipoCorreo" Mode="In" Type="String" />
-            <Parameter Name="direccionCorreo" Mode="In" Type="String" />
-            <Parameter Name="CadenaBusqueda" Mode="In" Type="String" />
-          </FunctionImport>
           <EntitySet Name="vwseg_menu_x_tb_empresa_x_seg_usuario" EntityType="DBFacturacion_ElectronicaModel.vwseg_menu_x_tb_empresa_x_seg_usuario" />
           <EntitySet Name="seg_menu" EntityType="DBFacturacion_ElectronicaModel.seg_menu" />
           <EntitySet Name="seg_menu_x_tb_empresa" EntityType="DBFacturacion_ElectronicaModel.seg_menu_x_tb_empresa" />
@@ -1875,6 +1921,13 @@
           </AssociationSet>
           <EntitySet Name="tb_Parametro" EntityType="DBFacturacion_ElectronicaModel.tb_Parametro" />
           <EntitySet Name="tb_comprobante_x_valor" EntityType="DBFacturacion_ElectronicaModel.tb_comprobante_x_valor" />
+          <FunctionImport Name="sp_consulta_x_Mensaje_x_Pagina" ReturnType="Collection(DBFacturacion_ElectronicaModel.sp_consulta_x_Mensaje_x_Pagina_Result)">
+            <Parameter Name="Pagina" Mode="In" Type="Int32" />
+            <Parameter Name="RegistrosporPagina" Mode="In" Type="Int32" />
+            <Parameter Name="TipoCorreo" Mode="In" Type="String" />
+            <Parameter Name="direccionCorreo" Mode="In" Type="String" />
+            <Parameter Name="CadenaBusqueda" Mode="In" Type="String" />
+          </FunctionImport>
           <EntitySet Name="tb_facturas_eventos" EntityType="DBFacturacion_ElectronicaModel.tb_facturas_eventos" />
           </EntityContainer>
         <EntityType Name="mail_Catalogo">
@@ -2197,7 +2250,7 @@
           <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
           <Property Type="String" Name="cedulaRuc_contri" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Nom_Contribuyente" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Mail" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mail" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Mail_secundario" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="EsCliente" Nullable="false" />
           <Property Type="Boolean" Name="EsProveedor" Nullable="false" />
@@ -2692,6 +2745,12 @@
             <PropertyRef Name="IdCuenta" />
             <PropertyRef Name="observacion" />
             <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="TipoCuenta" />
+            <PropertyRef Name="Usuario" />
+            <PropertyRef Name="Port_salida" />
+            <PropertyRef Name="port_entrada" />
+            <PropertyRef Name="cta_predeterminada" />
           </Key>
           <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
           <Property Type="String" Name="IdCuenta" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -2699,6 +2758,29 @@
           <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Nombre_cuenta" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="direccion_correo" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TipoCuenta" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Usuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServidorCorreoEntrante" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServidorCorreoSaliente" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Port_salida" Nullable="false" />
+          <Property Type="Int32" Name="port_entrada" Nullable="false" />
+          <Property Type="Boolean" Name="cta_predeterminada" Nullable="false" />
+          <Property Type="String" Name="tipo_Seguridad" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="precisa_conexion_cifrada" />
+          <Property Type="Boolean" Name="enviar_copia_x_cada_mail_enviado" />
+          <Property Type="Boolean" Name="enviar_mail_x_cada_cbte_no_auto" />
+          <Property Type="String" Name="cta_mail_para_envio_x_cbte_enviado" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cta_mail_para_envio_x_cbte_no_auto" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Usar_Credenciales_x_default_SMTP" />
+          <Property Type="String" Name="Tipo_Authenticacion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Usa_SSL_Conexion_para_Descarga_correo" />
+          <Property Type="Boolean" Name="Guardar_1_copia_de_corre_en_server_mail" />
+          <Property Type="Int32" Name="Borra_server_mail_cada_dias" />
+          <Property Type="String" Name="Usuario_smtp" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password_smtp" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Confirmacion_de_Lectura" />
+          <Property Type="Boolean" Name="Confirmacion_de_Entrega" />
         </EntityType>
         <ComplexType Name="sp_VerificarRecuperaciondeContrasenia_Result">
           <Property Type="Decimal" Name="IdContribuyente" Nullable="false" Precision="18" Scale="0" />
@@ -2798,33 +2880,6 @@
           <Property Type="String" Name="cadena_conexion_Exterior" Nullable="true" MaxLength="500" />
           <Property Type="String" Name="Cod_Empresa_Para_DB_Ext" Nullable="true" MaxLength="20" />
           <Property Type="Double" Name="Total" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_consulta_x_Mensaje_x_Pagina_Result">
-          <Property Type="Int64" Name="RowNum" Nullable="true" />
-          <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
-          <Property Type="Decimal" Name="IdMensaje" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
-          <Property Type="String" Name="Para" Nullable="true" />
-          <Property Type="String" Name="Para_CCO" Nullable="true" />
-          <Property Type="String" Name="Asunto" Nullable="true" MaxLength="300" />
-          <Property Type="String" Name="Mail" Nullable="true" MaxLength="100" />
-          <Property Type="Boolean" Name="Tiene_Adjunto" Nullable="false" />
-          <Property Type="Int32" Name="Prioridad" Nullable="false" />
-          <Property Type="Boolean" Name="Leido" Nullable="false" />
-          <Property Type="Boolean" Name="Respondido" Nullable="false" />
-          <Property Type="Boolean" Name="Eliminado" Nullable="false" />
-          <Property Type="String" Name="Para_CC" Nullable="true" />
-          <Property Type="String" Name="codMensajeId" Nullable="true" />
-          <Property Type="String" Name="IdTipo_Mensaje" Nullable="false" MaxLength="25" />
-          <Property Type="String" Name="IdCuenta" Nullable="true" MaxLength="50" />
-          <Property Type="Decimal" Name="IdContribuyente" Nullable="true" Precision="18" Scale="0" />
-          <Property Type="String" Name="Mail_secundario" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Nom_Contribuyente" Nullable="true" MaxLength="250" />
-          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="cedulaRuc_contri" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="RazonSocial_Emisor" Nullable="true" MaxLength="300" />
-          <Property Type="String" Name="RUC_Emisor" Nullable="true" MaxLength="13" />
         </ComplexType>
         <EntityType Name="vwseg_menu_x_tb_empresa_x_seg_usuario">
           <Key>
@@ -3127,6 +3182,7 @@
           <NavigationProperty Name="tb_Comprobante_estado_proceso" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Comprobante_estado_proceso" FromRole="tb_Comprobante" ToRole="tb_Comprobante_estado_proceso" />
           <NavigationProperty Name="tb_Comprobante_tipo_estado" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Comprobante_tipo_estado" FromRole="tb_Comprobante" ToRole="tb_Comprobante_tipo_estado" />
           <NavigationProperty Name="tb_Empresa" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" FromRole="tb_Comprobante" ToRole="tb_Empresa" />
+          <Property Type="Decimal" Name="IdRegistro" Precision="18" Scale="0" />
         </EntityType>
         <Association Name="FK_tb_Comprobante_tb_Catalogo1">
           <End Type="DBFacturacion_ElectronicaModel.tb_Catalogo" Role="tb_Catalogo" Multiplicity="1" />
@@ -3204,6 +3260,44 @@
           <Property Type="String" Name="IdComprobante" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Type="Double" Name="Total" />
         </EntityType>
+        <ComplexType Name="sp_consulta_x_Mensaje_x_Pagina_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Decimal" Name="IdMensaje" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Para" Nullable="true" />
+          <Property Type="String" Name="Asunto" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Asunto_texto_mostrado" Nullable="true" MaxLength="300" />
+          <Property Type="Boolean" Name="Tiene_Adjunto" Nullable="false" />
+          <Property Type="Int32" Name="Prioridad" Nullable="false" />
+          <Property Type="Boolean" Name="Leido" Nullable="false" />
+          <Property Type="Boolean" Name="Respondido" Nullable="false" />
+          <Property Type="Boolean" Name="No_Leido" Nullable="false" />
+          <Property Type="String" Name="Texto_mensaje" Nullable="false" />
+          <Property Type="String" Name="IdTipo_Mensaje" Nullable="false" MaxLength="25" />
+          <Property Type="Boolean" Name="Eliminado" Nullable="false" />
+          <Property Type="Decimal" Name="IdContribuyente" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="IdEmpresa" Nullable="true" />
+          <Property Type="String" Name="cedulaRuc_contri" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Nom_Contribuyente" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Mail" Nullable="true" />
+          <Property Type="String" Name="Mail_secundario" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="EsCliente" Nullable="true" />
+          <Property Type="Boolean" Name="EsProveedor" Nullable="true" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Observacion" Nullable="true" />
+          <Property Type="String" Name="TipoContacto" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RazonSocial_Emisor" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="RUC_Emisor" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="mail_remitente" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Para_CC" Nullable="true" />
+          <Property Type="String" Name="codMensajeId" Nullable="true" />
+          <Property Type="String" Name="IdCuenta" Nullable="true" MaxLength="50" />
+          <Property Type="Binary" Name="Archivo_correo" Nullable="true" />
+          <Property Type="String" Name="Para_CCO" Nullable="true" />
+        </ComplexType>
         <EntityType Name="tb_facturas_eventos">
           <Key>
             <PropertyRef Name="IdEmpresa" />
@@ -3902,6 +3996,29 @@
           <EntitySetMapping Name="wv_mail_Cuentas_Correo_x_Empresa">
             <EntityTypeMapping TypeName="DBFacturacion_ElectronicaModel.wv_mail_Cuentas_Correo_x_Empresa">
               <MappingFragment StoreEntitySet="wv_mail_Cuentas_Correo_x_Empresa">
+                <ScalarProperty Name="Confirmacion_de_Entrega" ColumnName="Confirmacion_de_Entrega" />
+                <ScalarProperty Name="Confirmacion_de_Lectura" ColumnName="Confirmacion_de_Lectura" />
+                <ScalarProperty Name="Password_smtp" ColumnName="Password_smtp" />
+                <ScalarProperty Name="Usuario_smtp" ColumnName="Usuario_smtp" />
+                <ScalarProperty Name="Borra_server_mail_cada_dias" ColumnName="Borra_server_mail_cada_dias" />
+                <ScalarProperty Name="Guardar_1_copia_de_corre_en_server_mail" ColumnName="Guardar_1_copia_de_corre_en_server_mail" />
+                <ScalarProperty Name="Usa_SSL_Conexion_para_Descarga_correo" ColumnName="Usa_SSL_Conexion_para_Descarga_correo" />
+                <ScalarProperty Name="Tipo_Authenticacion" ColumnName="Tipo_Authenticacion" />
+                <ScalarProperty Name="Usar_Credenciales_x_default_SMTP" ColumnName="Usar_Credenciales_x_default_SMTP" />
+                <ScalarProperty Name="cta_mail_para_envio_x_cbte_no_auto" ColumnName="cta_mail_para_envio_x_cbte_no_auto" />
+                <ScalarProperty Name="cta_mail_para_envio_x_cbte_enviado" ColumnName="cta_mail_para_envio_x_cbte_enviado" />
+                <ScalarProperty Name="enviar_mail_x_cada_cbte_no_auto" ColumnName="enviar_mail_x_cada_cbte_no_auto" />
+                <ScalarProperty Name="enviar_copia_x_cada_mail_enviado" ColumnName="enviar_copia_x_cada_mail_enviado" />
+                <ScalarProperty Name="precisa_conexion_cifrada" ColumnName="precisa_conexion_cifrada" />
+                <ScalarProperty Name="tipo_Seguridad" ColumnName="tipo_Seguridad" />
+                <ScalarProperty Name="cta_predeterminada" ColumnName="cta_predeterminada" />
+                <ScalarProperty Name="port_entrada" ColumnName="port_entrada" />
+                <ScalarProperty Name="Port_salida" ColumnName="Port_salida" />
+                <ScalarProperty Name="ServidorCorreoSaliente" ColumnName="ServidorCorreoSaliente" />
+                <ScalarProperty Name="ServidorCorreoEntrante" ColumnName="ServidorCorreoEntrante" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="direccion_correo" ColumnName="direccion_correo" />
                 <ScalarProperty Name="Nombre_cuenta" ColumnName="Nombre_cuenta" />
                 <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
@@ -4011,37 +4128,6 @@
                 <ScalarProperty Name="cadena_conexion_Exterior" ColumnName="cadena_conexion_Exterior" />
                 <ScalarProperty Name="Cod_Empresa_Para_DB_Ext" ColumnName="Cod_Empresa_Para_DB_Ext" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_consulta_x_Mensaje_x_Pagina" FunctionName="DBFacturacion_ElectronicaModel.Store.sp_consulta_x_Mensaje_x_Pagina">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBFacturacion_ElectronicaModel.sp_consulta_x_Mensaje_x_Pagina_Result">
-                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-                <ScalarProperty Name="IdMensaje" ColumnName="IdMensaje" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Para" ColumnName="Para" />
-                <ScalarProperty Name="Para_CCO" ColumnName="Para_CCO" />
-                <ScalarProperty Name="Asunto" ColumnName="Asunto" />
-                <ScalarProperty Name="Mail" ColumnName="Mail" />
-                <ScalarProperty Name="Tiene_Adjunto" ColumnName="Tiene_Adjunto" />
-                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
-                <ScalarProperty Name="Leido" ColumnName="Leido" />
-                <ScalarProperty Name="Respondido" ColumnName="Respondido" />
-                <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
-                <ScalarProperty Name="Para_CC" ColumnName="Para_CC" />
-                <ScalarProperty Name="codMensajeId" ColumnName="codMensajeId" />
-                <ScalarProperty Name="IdTipo_Mensaje" ColumnName="IdTipo_Mensaje" />
-                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
-                <ScalarProperty Name="IdContribuyente" ColumnName="IdContribuyente" />
-                <ScalarProperty Name="Mail_secundario" ColumnName="Mail_secundario" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Nom_Contribuyente" ColumnName="Nom_Contribuyente" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="cedulaRuc_contri" ColumnName="cedulaRuc_contri" />
-                <ScalarProperty Name="RazonSocial_Emisor" ColumnName="RazonSocial_Emisor" />
-                <ScalarProperty Name="RUC_Emisor" ColumnName="RUC_Emisor" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -4158,6 +4244,7 @@
           <EntitySetMapping Name="tb_Comprobante">
             <EntityTypeMapping TypeName="DBFacturacion_ElectronicaModel.tb_Comprobante">
               <MappingFragment StoreEntitySet="tb_Comprobante">
+                <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
                 <ScalarProperty Name="Clave_Acceso" ColumnName="Clave_Acceso" />
                 <ScalarProperty Name="s_xml_bak" ColumnName="s_xml_bak" />
                 <ScalarProperty Name="Ambiente" ColumnName="Ambiente" />
@@ -4212,6 +4299,48 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_consulta_x_Mensaje_x_Pagina" FunctionName="DBFacturacion_ElectronicaModel.Store.sp_consulta_x_Mensaje_x_Pagina">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBFacturacion_ElectronicaModel.sp_consulta_x_Mensaje_x_Pagina_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="IdMensaje" ColumnName="IdMensaje" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Para" ColumnName="Para" />
+                <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+                <ScalarProperty Name="Asunto_texto_mostrado" ColumnName="Asunto_texto_mostrado" />
+                <ScalarProperty Name="Tiene_Adjunto" ColumnName="Tiene_Adjunto" />
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+                <ScalarProperty Name="Leido" ColumnName="Leido" />
+                <ScalarProperty Name="Respondido" ColumnName="Respondido" />
+                <ScalarProperty Name="No_Leido" ColumnName="No_Leido" />
+                <ScalarProperty Name="Texto_mensaje" ColumnName="Texto_mensaje" />
+                <ScalarProperty Name="IdTipo_Mensaje" ColumnName="IdTipo_Mensaje" />
+                <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+                <ScalarProperty Name="IdContribuyente" ColumnName="IdContribuyente" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+                <ScalarProperty Name="cedulaRuc_contri" ColumnName="cedulaRuc_contri" />
+                <ScalarProperty Name="Nom_Contribuyente" ColumnName="Nom_Contribuyente" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Mail_secundario" ColumnName="Mail_secundario" />
+                <ScalarProperty Name="EsCliente" ColumnName="EsCliente" />
+                <ScalarProperty Name="EsProveedor" ColumnName="EsProveedor" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="TipoContacto" ColumnName="TipoContacto" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="RazonSocial_Emisor" ColumnName="RazonSocial_Emisor" />
+                <ScalarProperty Name="RUC_Emisor" ColumnName="RUC_Emisor" />
+                <ScalarProperty Name="mail_remitente" ColumnName="mail_remitente" />
+                <ScalarProperty Name="Para_CC" ColumnName="Para_CC" />
+                <ScalarProperty Name="codMensajeId" ColumnName="codMensajeId" />
+                <ScalarProperty Name="IdCuenta" ColumnName="IdCuenta" />
+                <ScalarProperty Name="Archivo_correo" ColumnName="Archivo_correo" />
+                <ScalarProperty Name="Para_CCO" ColumnName="Para_CCO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="tb_facturas_eventos">
             <EntityTypeMapping TypeName="DBFacturacion_ElectronicaModel.tb_facturas_eventos">
               <MappingFragment StoreEntitySet="tb_facturas_eventos">

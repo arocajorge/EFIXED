@@ -36,6 +36,7 @@ namespace FirmElect.Data
         public string Ambiente { get; set; }
         public string s_xml_bak { get; set; }
         public string Clave_Acceso { get; set; }
+        public Nullable<decimal> IdRegistro { get; set; }
     
         public virtual tb_Catalogo tb_Catalogo { get; set; }
         public virtual tb_Comprobante_estado_proceso tb_Comprobante_estado_proceso { get; set; }

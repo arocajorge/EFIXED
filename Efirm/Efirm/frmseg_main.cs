@@ -145,61 +145,71 @@ namespace Efirm
                 ucseg_menu_x_empresa_x_usuario1.treeList_menu.ExpandAll();
 
 
-                //List<string> formularios = new List<string>();
+                List<string> formularios = new List<string>();
 
-                //formularios.Add("Frm_Main_Mail");             
-                //formularios.Add("frmComprobantes_autorizados_no_autorizados");             
-                //formularios.Add("frmComprobantes_en_repocitorio");             
-                //formularios.Add("frmComprobantes_recibidos_sin_respuestas");
-                //formularios.Add("frmComprobantes_validos");
+                formularios.Add("Frm_Main_Mail");
+                formularios.Add("frmBuscar_comprobantes");
+                formularios.Add("frmComprobantes_en_repocitorio");
+                formularios.Add("frmComprobantes_recibidos_sin_respuestas");
+                formularios.Add("frmComprobantes_validos");
+                formularios.Add("frmAdministrador_cbtes_Auto_para_exportacion");
 
-                //foreach (var item in formularios)
-                //{
+                
+                foreach (var item in formularios)
+                {
 
-                //    if (!this.FormularioEstaAbierto(item))
-                //    {
-                //        if (item == "Frm_Main_Mail")
-                //        {
-                //            MailEfirm.Frm_Main_Mail frm11 = new MailEfirm.Frm_Main_Mail();
-                //            frm11.WindowState = FormWindowState.Maximized;
-                //            frm11.MdiParent = this;
-                //            frm11.Show();
-                //        }
+                    if (!this.FormularioEstaAbierto(item))
+                    {
+                        if (item == "Frm_Main_Mail")
+                        {
+                            MailEfirm.Frm_Main_Mail frm11 = new MailEfirm.Frm_Main_Mail();
+                            frm11.WindowState = FormWindowState.Maximized;
+                            frm11.MdiParent = this;
+                            frm11.Show();
+                        }
 
-                //        if (item == "frmComprobantes_autorizados_no_autorizados")
-                //        {
-                //            frmComprobantes_autorizados_no_autorizados frm10 = new frmComprobantes_autorizados_no_autorizados();
-                //            frm10.WindowState = FormWindowState.Maximized;
-                //            frm10.MdiParent = this;
-                //            frm10.Show();
-                //        }
+                        if (item == "frmBuscar_comprobantes")
+                        {
+                            frmBuscar_comprobantes frm10 = new frmBuscar_comprobantes();
+                            frm10.WindowState = FormWindowState.Maximized;
+                            frm10.MdiParent = this;
+                            frm10.Show();
+                        }
 
-                //        if (item == "frmComprobantes_en_repocitorio")
-                //        {
-                //            frmComprobantes_en_repocitorio frm1 = new frmComprobantes_en_repocitorio();
-                //            frm1.WindowState = FormWindowState.Maximized;
-                //            frm1.MdiParent = this;
-                //            frm1.Show();
-                //        }
-                //        if (item == "frmComprobantes_validos")
-                //        {
-                //            frmComprobantes_validos frm2 = new frmComprobantes_validos();
-                //            frm2.WindowState = FormWindowState.Maximized;
-                //            frm2.MdiParent = this;
-                //            frm2.Show();
+                        if (item == "frmComprobantes_en_repocitorio")
+                        {
+                            frmComprobantes_en_repocitorio frm1 = new frmComprobantes_en_repocitorio();
+                            frm1.WindowState = FormWindowState.Maximized;
+                            frm1.MdiParent = this;
+                            frm1.Show();
+                        }
+                        if (item == "frmComprobantes_validos")
+                        {
+                            frmComprobantes_validos frm2 = new frmComprobantes_validos();
+                            frm2.WindowState = FormWindowState.Maximized;
+                            frm2.MdiParent = this;
+                            frm2.Show();
 
-                //        }
-                //        if (item == "frmComprobantes_recibidos_sin_respuestas")
-                //        {
-                //            frmComprobantes_recibidos_sin_respuestas frm3 = new frmComprobantes_recibidos_sin_respuestas();
-                //            frm3.Show();
-                //            frm3.MdiParent = this;
-                //            frm3.WindowState = FormWindowState.Maximized;
+                        }
+                        if (item == "frmComprobantes_recibidos_sin_respuestas")
+                        {
+                            frmComprobantes_recibidos_sin_respuestas frm3_ = new frmComprobantes_recibidos_sin_respuestas();
+                            frm3_.Show();
+                            frm3_.MdiParent = this;
+                            frm3_.WindowState = FormWindowState.Maximized;
 
-                //        }
-                //    }
-                    
-               // }
+                        }
+                        if (item == "frmAdministrador_cbtes_Auto_para_exportacion")
+                        {
+                            frmAdministrador_cbtes_Auto_para_exportacion frm3 = new frmAdministrador_cbtes_Auto_para_exportacion();
+                            frm3.Show();
+                            frm3.MdiParent = this;
+                            frm3.WindowState = FormWindowState.Maximized;
+
+                        }
+                    }
+
+                }
             }
             catch (Exception ex)
             {

@@ -150,7 +150,7 @@ namespace FirmElect.Bus
            }
        }
 
-       public Boolean Enviar_Correo(mail_Mensaje_Info MensajeInfo, ref string mensajeErrorOut)
+       public Boolean Enviar_Correo_(mail_Mensaje_Info MensajeInfo, ref string mensajeErrorOut)
        {
            string SConfigCta = "";
            
@@ -295,17 +295,19 @@ namespace FirmElect.Bus
                    oSmtpServer.User = InfoCtaMail_Remitente.Usuario;
                    oSmtpServer.Password = InfoCtaMail_Remitente.Password;
                }
+               string s = InfoCtaMail_Remitente.Port_salida.ToString();
 
                
                switch (tipo_conex_cifrada_smtp)
                {
+
                    case "SSL":
                        oSmtpServer.ConnectType = SmtpConnectType.ConnectDirectSSL;
-                       oSmtpServer.Port = 465;
+                       oSmtpServer.Port =Convert.ToInt32( InfoCtaMail_Remitente.Port_salida);
                        break;
                    case "TLS":
                        oSmtpServer.ConnectType = SmtpConnectType.ConnectDirectSSL;
-                       oSmtpServer.Port = 587;
+                       oSmtpServer.Port = Convert.ToInt32(InfoCtaMail_Remitente.Port_salida);
                        break;
                    case "Ninguno":
                        oSmtpServer.ConnectType = SmtpConnectType.ConnectNormal;
@@ -350,7 +352,7 @@ namespace FirmElect.Bus
                SConfigCta = SConfigCta + " oSmtpServer.User:" + oSmtpServer.User.ToString() + "\n";
                SConfigCta = SConfigCta + " oSmtpServer.Password:" + oSmtpServer.Password  + "\n";
                SConfigCta = SConfigCta + " oSmtpServer.Protocol :" + oSmtpServer.Protocol + "\n";
-               oSmtpServer.HeloDomain = "gmail.com";
+               oSmtpServer.HeloDomain = InfoCtaMail_Remitente.ServidorCorreoSaliente;
                oSmtpServer.AuthType = new SmtpAuthType();
                if (MensajeInfo.Para == "")
                {
@@ -379,7 +381,7 @@ namespace FirmElect.Bus
 
        }
 
-       public Boolean Enviar_Correo_(mail_Mensaje_Info MensajeInfo, ref string mensajeErrorOut)
+       public Boolean Enviar_Correo(mail_Mensaje_Info MensajeInfo, ref string mensajeErrorOut)
        {
            string SConfigCta = "";
 
@@ -394,48 +396,27 @@ namespace FirmElect.Bus
 
                string mensajeError = "";
                string tipo_conex_cifrada_smtp = "";
-
-
                //optengo el nombre de la pc para saber desde donde se envi el correo para auditar la duplicacion...
-               MensajeInfo.Texto_mensaje = MensajeInfo.Texto_mensaje + " PC/Envio: " + Funciones.Get_Nombre_PC();
-               /////////////
-
-
+              // MensajeInfo.Texto_mensaje = MensajeInfo.Texto_mensaje + " PC/Envio: " + Funciones.Get_Nombre_PC();
                mail_Cuentas_Correo_Info InfoCtaMail_Remitente = new mail_Cuentas_Correo_Info();
                InfoCtaMail_Remitente = listMail_cta.FirstOrDefault(v => v.IdCuenta == MensajeInfo.IdCuenta);
-
-
                if (listMail_x_Empresa.Count == 0)
                {
                    mensajeErrorOut = "No Existe cuentas para envio de correo configuradas en la base ";
                    return false;
                }
-
                if (InfoCtaMail_Remitente == null || InfoCtaMail_Remitente.IdCuenta == null)
                {
                    mensajeErrorOut = "No existe una cuenta relaciona en la base para la cuenta del mensaje verique por base";
                    return false;
                }
-
-
-               //if (!mailValida.email_bien_escrito(MensajeInfo.Para))
-               //{
-               //    mensajeErrorOut = "La cuenta de correo es Invalida ";
-               //    MensajeInfo.IdTipo_Mensaje = eTipoMail.Mail_NO_Env_x_error;
-               //    datamaMail.Actualizar_TipoMensaje(MensajeInfo, ref mensajeErrorOut);
-               //    return false;
-               //}
-
                if (MensajeInfo.IdCuenta == "" || MensajeInfo.IdCuenta == null)
                {
                    InfoCtaMail_Remitente = listMail_cta.FirstOrDefault(v => v.cta_predeterminada == true);
                    MensajeInfo.IdCuenta = InfoCtaMail_Remitente.IdCuenta;
                    MensajeInfo.mail_remitente = InfoCtaMail_Remitente.direccion_correo;
-
                    datamaMail.Actualizar_Datos_Cuenta(MensajeInfo, ref mensajeErrorOut);
-
                    mensajeErrorOut = "la Cuenta Remitente no esta establecido en el mensaje se enviara con la cuenta por default ...";
-
                }
                MailMessage oSmtpMail_msg = new MailMessage();
 
@@ -443,10 +424,6 @@ namespace FirmElect.Bus
                // si tiene archivo adjunto
                if (MensajeInfo.Tiene_Adjunto == true)
                {
-
-
-
-
                    //optengo los archivos adjuntos
                    MensajeInfo.list_Archivos_Adjuntos = OdataArchivoAdjunto.Lista_ArchivoAdjunto_Mensaje_x_comprobante(MensajeInfo.IdMensaje, ref  mensajeErrorOut);
                    foreach (var item in MensajeInfo.list_Archivos_Adjuntos)
@@ -457,7 +434,6 @@ namespace FirmElect.Bus
                        byte[] BinarioFileAdjunto = null;
                        if (comprobante.IdComprobante != null)
                        {
-
                            // si la extencion ex .pdf lo creo en el tmp 
                            if (item.extensionArchivo.ToUpper() == ".PDF")
                            {
@@ -475,37 +451,28 @@ namespace FirmElect.Bus
                                List<FileInfo> listaFiles = Directorio_Pdf_Xml.GetFiles(comprobante.IdComprobante + ".pdf").ToList();
                                foreach (var itemBi in listaFiles)
                                {
-
                                    FileStream file = new FileStream(RutaArchivos + itemBi.Name, FileMode.Open);
                                    BinarioFileAdjunto = new byte[file.Length];
-
                                    file.Read(BinarioFileAdjunto, 0, Convert.ToInt32(file.Length));
                                    file.Close();
                                }
-
                            }
                        }
 
                        // LLENO EL BINARIO PARA EL XML
                        if (item.extensionArchivo.ToUpper() == ".XML")
                        {
-
                            XmlDocument xmlOrigen = new XmlDocument();
                            xmlOrigen.Load(new StringReader(comprobante.s_XML));
                            BinarioFileAdjunto = Encoding.UTF8.GetBytes(xmlOrigen.OuterXml);
                        }
-
 
                        oSmtpMail_msg.Attachments.Add(new System.Net.Mail.Attachment(new MemoryStream(BinarioFileAdjunto), item.IdComprobante + item.extensionArchivo));
                    }
                }
 
                #endregion
-              
-
                tipo_conex_cifrada_smtp = InfoCtaMail_Remitente.tipo_Seguridad;
-
-
                if (MensajeInfo.Para == "")
                    return false;
                oSmtpMail_msg.To.Add(MensajeInfo.Para);
@@ -521,10 +488,9 @@ namespace FirmElect.Bus
 
                    }
                }
-            
                oSmtpMail_msg.From = new System.Net.Mail.MailAddress(InfoCtaMail_Remitente.direccion_correo);
                oSmtpMail_msg.Subject = MensajeInfo.Asunto;
-               oSmtpMail_msg.Body = MensajeInfo.Asunto + "\n\n\n\n";
+               oSmtpMail_msg.Body = MensajeInfo.Texto_mensaje + "\n\n\n\n";
                oSmtpMail_msg.Body = oSmtpMail_msg.Body + " "+MensajeInfo.RazonSocial_Emisor;
 
                if (MensajeInfo.Para == "")
@@ -532,26 +498,18 @@ namespace FirmElect.Bus
                    mensajeErrorOut = "No hay cuenta de correo a quien enviar ";
                    return false;
                }
-
                //enviando correo 
-
-
                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
                smtp.Host = InfoCtaMail_Remitente.ServidorCorreoSaliente;
                smtp.EnableSsl = true;// InfoCtaMail_Remitente.precisa_conexion_cifrada;
-               //smtp.Port = InfoCtaMail_Remitente.Port_salida;
-               smtp.Credentials = new NetworkCredential(InfoCtaMail_Remitente.direccion_correo, InfoCtaMail_Remitente.Password);
-               
+               smtp.Port = InfoCtaMail_Remitente.Port_salida;
+               smtp.Credentials = new NetworkCredential(InfoCtaMail_Remitente.direccion_correo, InfoCtaMail_Remitente.Password);             
                smtp.Send(oSmtpMail_msg);
-
-
                if (MensajeInfo.IdMensaje > 0)// modificar
                {
                    MensajeInfo.IdTipo_Mensaje = eTipoMail.Enviado;
                    datamaMail.Actualizar_TipoMensaje(MensajeInfo, ref mensajeErrorOut);
                }
-              
-
                return true;
            }
            catch (Exception ex)
