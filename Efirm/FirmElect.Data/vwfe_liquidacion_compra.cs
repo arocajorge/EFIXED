@@ -19,7 +19,7 @@ namespace FirmElect.Data
         public int IdTipoCbte_Ogiro { get; set; }
         public string IdOrden_giro_Tipo { get; set; }
         public decimal IdProveedor { get; set; }
-        public Nullable<int> SecuenciaProveedor { get; set; }
+        public int SecuenciaProveedor { get; set; }
         public System.DateTime co_fechaOg { get; set; }
         public string co_serie { get; set; }
         public string co_factura { get; set; }

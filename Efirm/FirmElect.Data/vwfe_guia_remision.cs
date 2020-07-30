@@ -58,7 +58,7 @@ namespace FirmElect.Data
         public string vt_serie1 { get; set; }
         public string vt_serie2 { get; set; }
         public string vt_NumFactura { get; set; }
-        public System.DateTime vt_fecha { get; set; }
+        public Nullable<System.DateTime> vt_fecha { get; set; }
         public string tr_Descripcion { get; set; }
     }
 }

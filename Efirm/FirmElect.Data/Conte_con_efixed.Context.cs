@@ -38,8 +38,8 @@ namespace FirmElect.Data
         public DbSet<vwfe_retencion_detalle> vwfe_retencion_detalle { get; set; }
         public DbSet<fa_elec_registros_generados> fa_elec_registros_generados { get; set; }
         public DbSet<vwfe_factura> vwfe_factura { get; set; }
-        public DbSet<vwfe_guia_remision> vwfe_guia_remision { get; set; }
         public DbSet<vwfe_nota_credito_detalle> vwfe_nota_credito_detalle { get; set; }
+        public DbSet<vwfe_guia_remision> vwfe_guia_remision { get; set; }
         public DbSet<vwfe_liquidacion_compra> vwfe_liquidacion_compra { get; set; }
         public DbSet<vwfe_liquidacion_compra_det> vwfe_liquidacion_compra_det { get; set; }
     }

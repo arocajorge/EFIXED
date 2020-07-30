@@ -459,7 +459,7 @@
           <Property Name="ESTADO" Type="char" Nullable="false" MaxLength="1" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_factura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_factura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_factura">
           <Key>
@@ -499,7 +499,7 @@
           <Property Name="Telefono" Type="varchar" MaxLength="200" />
           <Property Name="Celular" Type="varchar" MaxLength="200" />
           <Property Name="Correo" Type="varchar" MaxLength="1000" />
-          <Property Name="Direccion" Type="varchar" MaxLength="150" />
+          <Property Name="Direccion" Type="varchar" MaxLength="1000" />
           <Property Name="RazonSocial" Type="varchar" Nullable="false" MaxLength="300" />
           <Property Name="NombreComercial" Type="varchar" Nullable="false" MaxLength="300" />
           <Property Name="ContribuyenteEspecial" Type="varchar" Nullable="false" MaxLength="5" />
@@ -514,13 +514,13 @@
           <Property Name="totalDescuento" Type="numeric" Precision="10" Scale="2" />
           <Property Name="total_sin_impuesto" Type="numeric" Precision="10" Scale="2" />
           <Property Name="importeTotal" Type="numeric" Precision="10" Scale="2" />
-          <Property Name="Expr1" Type="varchar" MaxLength="150" />
+          <Property Name="Expr1" Type="varchar" MaxLength="1000" />
           <Property Name="Expr2" Type="varchar" Nullable="false" MaxLength="1000" />
           <Property Name="em_telefonos" Type="varchar" MaxLength="200" />
           <Property Name="vt_Observacion" Type="varchar" Nullable="false" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_factura_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_factura_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_factura_detalle">
           <Key>
@@ -555,7 +555,7 @@
           <Property Name="vt_por_iva" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_factura_impuestos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_factura_impuestos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_factura_impuestos">
           <Key>
@@ -574,7 +574,7 @@
           <Property Name="vt_por_iva" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_guia_remision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_guia_remision' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_guia_remision">
           <Key>
@@ -601,14 +601,13 @@
             <PropertyRef Name="ContribuyenteEspecial" />
             <PropertyRef Name="ObligadoAllevarConta" />
             <PropertyRef Name="em_direccion" />
-            <PropertyRef Name="vt_fecha" />
             <PropertyRef Name="tr_Descripcion" />
           </Key>
           <Property Name="IdEmpresa" Type="int" Nullable="false" />
           <Property Name="IdSucursal" Type="int" Nullable="false" />
           <Property Name="IdBodega" Type="int" Nullable="false" />
           <Property Name="IdGuiaRemision" Type="numeric" Nullable="false" />
-          <Property Name="CodGuiaRemision" Type="varchar" MaxLength="50" />
+          <Property Name="CodGuiaRemision" Type="varchar" MaxLength="500" />
           <Property Name="CodDocumentoTipo" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="Serie1" Type="varchar" MaxLength="3" />
           <Property Name="Serie2" Type="varchar" MaxLength="3" />
@@ -627,11 +626,11 @@
           <Property Name="Direccion_Destino" Type="varchar(max)" />
           <Property Name="Cedula" Type="varchar" MaxLength="20" />
           <Property Name="Nombre" Type="varchar" MaxLength="500" />
-          <Property Name="Nombres" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Nombres" Type="varchar" Nullable="false" MaxLength="200" />
           <Property Name="Telefono" Type="varchar" MaxLength="200" />
           <Property Name="Celular" Type="varchar" MaxLength="200" />
           <Property Name="Correo" Type="varchar" MaxLength="1000" />
-          <Property Name="Direccion" Type="varchar" MaxLength="1000" />
+          <Property Name="Direccion" Type="varchar(max)" />
           <Property Name="pe_cedulaRuc" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="pe_nombreCompleto" Type="varchar" Nullable="false" MaxLength="200" />
           <Property Name="IdTipoDocumento" Type="varchar" Nullable="false" MaxLength="25" />
@@ -648,11 +647,11 @@
           <Property Name="vt_serie1" Type="varchar" MaxLength="3" />
           <Property Name="vt_serie2" Type="varchar" MaxLength="3" />
           <Property Name="vt_NumFactura" Type="varchar" MaxLength="20" />
-          <Property Name="vt_fecha" Type="datetime" Nullable="false" />
-          <Property Name="tr_Descripcion" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="vt_fecha" Type="datetime" />
+          <Property Name="tr_Descripcion" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_guia_remision_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_guia_remision_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_guia_remision_detalle">
           <Key>
@@ -677,7 +676,7 @@
           <Property Name="pr_descripcion_2" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_guia_remision_x_factura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_guia_remision_x_factura' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_guia_remision_x_factura">
           <Key>
@@ -699,7 +698,7 @@
           <Property Name="vt_autorizacion" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_liquidacion_compra' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_liquidacion_compra' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_liquidacion_compra">
           <Key>
@@ -708,6 +707,7 @@
             <PropertyRef Name="IdTipoCbte_Ogiro" />
             <PropertyRef Name="IdOrden_giro_Tipo" />
             <PropertyRef Name="IdProveedor" />
+            <PropertyRef Name="SecuenciaProveedor" />
             <PropertyRef Name="co_fechaOg" />
             <PropertyRef Name="co_serie" />
             <PropertyRef Name="co_factura" />
@@ -740,7 +740,7 @@
           <Property Name="IdTipoCbte_Ogiro" Type="int" Nullable="false" />
           <Property Name="IdOrden_giro_Tipo" Type="varchar" Nullable="false" MaxLength="5" />
           <Property Name="IdProveedor" Type="numeric" Nullable="false" />
-          <Property Name="SecuenciaProveedor" Type="int" />
+          <Property Name="SecuenciaProveedor" Type="int" Nullable="false" />
           <Property Name="co_fechaOg" Type="datetime" Nullable="false" />
           <Property Name="co_serie" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="co_factura" Type="varchar" Nullable="false" MaxLength="50" />
@@ -782,7 +782,7 @@
           <Property Name="IdSucursal_cxp" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_liquidacion_compra_det' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_liquidacion_compra_det' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_liquidacion_compra_det">
           <Key>
@@ -832,7 +832,7 @@
           <Property Name="IdSucursal_cxp" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_nota_credito' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_nota_credito' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_nota_credito">
           <Key>
@@ -863,7 +863,7 @@
           <Property Name="dev_IdEmpresa" Type="int" />
           <Property Name="dev_IdDev_Inven" Type="numeric" />
           <Property Name="CodNota" Type="varchar" MaxLength="50" />
-          <Property Name="CreDeb" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="CreDeb" Type="varchar" Nullable="false" MaxLength="1" />
           <Property Name="CodDocumentoTipo" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="Serie1" Type="varchar" MaxLength="3" />
           <Property Name="Serie2" Type="varchar" MaxLength="3" />
@@ -888,7 +888,7 @@
           <Property Name="Expr1" Type="varchar" MaxLength="200" />
           <Property Name="ContribuyenteEspecial" Type="varchar" Nullable="false" MaxLength="5" />
           <Property Name="ObligadoAllevarConta" Type="varchar" Nullable="false" MaxLength="2" />
-          <Property Name="vt_serie1" Type="varchar" MaxLength="3" />
+          <Property Name="vt_serie1" Type="varchar" MaxLength="4" />
           <Property Name="vt_serie2" Type="varchar" MaxLength="3" />
           <Property Name="vt_NumFactura" Type="varchar" MaxLength="20" />
           <Property Name="vt_fecha" Type="datetime" Nullable="false" />
@@ -899,7 +899,7 @@
           <Property Name="totalDescuento" Type="numeric" Precision="10" Scale="2" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_nota_credito_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_nota_credito_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_nota_credito_detalle">
           <Key>
@@ -939,7 +939,7 @@
           <Property Name="pr_descripcion_2" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_nota_credito_impuestos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_nota_credito_impuestos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_nota_credito_impuestos">
           <Key>
@@ -958,7 +958,7 @@
           <Property Name="vt_por_iva" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_nota_debito' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_nota_debito' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_nota_debito">
           <Key>
@@ -1025,7 +1025,7 @@
           <Property Name="totalDescuento" Type="numeric" Precision="10" Scale="2" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_nota_debito_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_nota_debito_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_nota_debito_detalle">
           <Key>
@@ -1071,7 +1071,7 @@
           <Property Name="pr_descripcion_2" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_nota_debito_impuestos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_nota_debito_impuestos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_nota_debito_impuestos">
           <Key>
@@ -1090,7 +1090,7 @@
           <Property Name="vt_por_iva" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_retencion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_retencion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_retencion">
           <Key>
@@ -1157,7 +1157,7 @@
           <Property Name="es_Documento_Electronico" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'DBERP_LICEO.EntidadRegulatoria.vwfe_retencion_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'DBERP.EntidadRegulatoria.vwfe_retencion_detalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="vwfe_retencion_detalle">
           <Key>
@@ -1197,8 +1197,8 @@
           <EntitySet Name="vwfe_retencion_detalle" EntityType="Model_conexion_efixed.vwfe_retencion_detalle" />
           <EntitySet Name="fa_elec_registros_generados" EntityType="Model_conexion_efixed.fa_elec_registros_generados" />
           <EntitySet Name="vwfe_factura" EntityType="Model_conexion_efixed.vwfe_factura" />
-          <EntitySet Name="vwfe_guia_remision" EntityType="Model_conexion_efixed.vwfe_guia_remision" />
           <EntitySet Name="vwfe_nota_credito_detalle" EntityType="Model_conexion_efixed.vwfe_nota_credito_detalle" />
+          <EntitySet Name="vwfe_guia_remision" EntityType="Model_conexion_efixed.vwfe_guia_remision" />
           <EntitySet Name="vwfe_liquidacion_compra" EntityType="Model_conexion_efixed.vwfe_liquidacion_compra" />
           <EntitySet Name="vwfe_liquidacion_compra_det" EntityType="Model_conexion_efixed.vwfe_liquidacion_compra_det" />
         </EntityContainer>
@@ -1320,7 +1320,7 @@
           <Property Type="Int32" Name="dev_IdEmpresa" />
           <Property Type="Decimal" Name="dev_IdDev_Inven" Precision="18" Scale="0" />
           <Property Type="String" Name="CodNota" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CreDeb" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CreDeb" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="CodDocumentoTipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Serie1" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Serie2" MaxLength="3" FixedLength="false" Unicode="false" />
@@ -1345,7 +1345,7 @@
           <Property Type="String" Name="Expr1" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="ContribuyenteEspecial" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="ObligadoAllevarConta" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="vt_serie1" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vt_serie1" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="vt_serie2" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="vt_NumFactura" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="vt_fecha" Nullable="false" Precision="3" />
@@ -1624,7 +1624,7 @@
           <Property Type="String" Name="Telefono" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Celular" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Correo" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Direccion" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Direccion" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="NombreComercial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="ContribuyenteEspecial" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
@@ -1639,85 +1639,10 @@
           <Property Type="Decimal" Name="totalDescuento" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="total_sin_impuesto" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="importeTotal" Precision="10" Scale="2" />
-          <Property Type="String" Name="Expr1" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Expr1" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Expr2" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="em_telefonos" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="vt_Observacion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="vwfe_guia_remision">
-          <Key>
-            <PropertyRef Name="IdEmpresa" />
-            <PropertyRef Name="IdSucursal" />
-            <PropertyRef Name="IdBodega" />
-            <PropertyRef Name="IdGuiaRemision" />
-            <PropertyRef Name="CodDocumentoTipo" />
-            <PropertyRef Name="gi_fecha" />
-            <PropertyRef Name="gi_FechaFinTraslado" />
-            <PropertyRef Name="gi_FechaInicioTraslado" />
-            <PropertyRef Name="placa" />
-            <PropertyRef Name="ruta" />
-            <PropertyRef Name="Direccion_Origen" />
-            <PropertyRef Name="Nombres" />
-            <PropertyRef Name="pe_cedulaRuc" />
-            <PropertyRef Name="pe_nombreCompleto" />
-            <PropertyRef Name="IdTipoDocumento" />
-            <PropertyRef Name="pe_Naturaleza" />
-            <PropertyRef Name="em_nombre" />
-            <PropertyRef Name="RazonSocial" />
-            <PropertyRef Name="NombreComercial" />
-            <PropertyRef Name="em_ruc" />
-            <PropertyRef Name="ContribuyenteEspecial" />
-            <PropertyRef Name="ObligadoAllevarConta" />
-            <PropertyRef Name="em_direccion" />
-            <PropertyRef Name="vt_fecha" />
-            <PropertyRef Name="tr_Descripcion" />
-          </Key>
-          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
-          <Property Type="Int32" Name="IdSucursal" Nullable="false" />
-          <Property Type="Int32" Name="IdBodega" Nullable="false" />
-          <Property Type="Decimal" Name="IdGuiaRemision" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="String" Name="CodGuiaRemision" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CodDocumentoTipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Serie1" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Serie2" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NumGuia_Preimpresa" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NUAutorizacion" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="Fecha_Autorizacion" Precision="3" />
-          <Property Type="DateTime" Name="gi_fecha" Nullable="false" Precision="3" />
-          <Property Type="Decimal" Name="gi_plazo" Precision="10" Scale="0" />
-          <Property Type="DateTime" Name="gi_fech_venc" Precision="3" />
-          <Property Type="String" Name="gi_Observacion" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="gi_FechaFinTraslado" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="gi_FechaInicioTraslado" Nullable="false" Precision="0" />
-          <Property Type="String" Name="placa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ruta" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Direccion_Origen" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Direccion_Destino" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Cedula" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nombre" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nombres" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Telefono" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Celular" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Correo" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Direccion" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="IdTipoDocumento" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pe_Naturaleza" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="em_nombre" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NombreComercial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="em_ruc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="em_telefonos" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ContribuyenteEspecial" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ObligadoAllevarConta" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="em_Email" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="em_direccion" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="vt_serie1" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="vt_serie2" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="vt_NumFactura" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="vt_fecha" Nullable="false" Precision="3" />
-          <Property Type="String" Name="tr_Descripcion" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vwfe_nota_credito_detalle">
           <Key>
@@ -1756,6 +1681,80 @@
           <Property Type="String" Name="pr_descripcion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="pr_descripcion_2" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="vwfe_guia_remision">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+            <PropertyRef Name="IdSucursal" />
+            <PropertyRef Name="IdBodega" />
+            <PropertyRef Name="IdGuiaRemision" />
+            <PropertyRef Name="CodDocumentoTipo" />
+            <PropertyRef Name="gi_fecha" />
+            <PropertyRef Name="gi_FechaFinTraslado" />
+            <PropertyRef Name="gi_FechaInicioTraslado" />
+            <PropertyRef Name="placa" />
+            <PropertyRef Name="ruta" />
+            <PropertyRef Name="Direccion_Origen" />
+            <PropertyRef Name="Nombres" />
+            <PropertyRef Name="pe_cedulaRuc" />
+            <PropertyRef Name="pe_nombreCompleto" />
+            <PropertyRef Name="IdTipoDocumento" />
+            <PropertyRef Name="pe_Naturaleza" />
+            <PropertyRef Name="em_nombre" />
+            <PropertyRef Name="RazonSocial" />
+            <PropertyRef Name="NombreComercial" />
+            <PropertyRef Name="em_ruc" />
+            <PropertyRef Name="ContribuyenteEspecial" />
+            <PropertyRef Name="ObligadoAllevarConta" />
+            <PropertyRef Name="em_direccion" />
+            <PropertyRef Name="tr_Descripcion" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="Int32" Name="IdSucursal" Nullable="false" />
+          <Property Type="Int32" Name="IdBodega" Nullable="false" />
+          <Property Type="Decimal" Name="IdGuiaRemision" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="CodGuiaRemision" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CodDocumentoTipo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Serie1" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Serie2" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NumGuia_Preimpresa" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NUAutorizacion" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha_Autorizacion" Precision="3" />
+          <Property Type="DateTime" Name="gi_fecha" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="gi_plazo" Precision="10" Scale="0" />
+          <Property Type="DateTime" Name="gi_fech_venc" Precision="3" />
+          <Property Type="String" Name="gi_Observacion" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="gi_FechaFinTraslado" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="gi_FechaInicioTraslado" Nullable="false" Precision="0" />
+          <Property Type="String" Name="placa" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ruta" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Direccion_Origen" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Direccion_Destino" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cedula" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombres" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Telefono" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Celular" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Correo" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Direccion" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_cedulaRuc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_nombreCompleto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdTipoDocumento" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pe_Naturaleza" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="em_nombre" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NombreComercial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="em_ruc" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="em_telefonos" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContribuyenteEspecial" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObligadoAllevarConta" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="em_Email" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="em_direccion" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vt_serie1" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vt_serie2" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vt_NumFactura" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="vt_fecha" Precision="3" />
+          <Property Type="String" Name="tr_Descripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="vwfe_liquidacion_compra">
           <Key>
             <PropertyRef Name="IdEmpresa" />
@@ -1763,6 +1762,7 @@
             <PropertyRef Name="IdTipoCbte_Ogiro" />
             <PropertyRef Name="IdOrden_giro_Tipo" />
             <PropertyRef Name="IdProveedor" />
+            <PropertyRef Name="SecuenciaProveedor" />
             <PropertyRef Name="co_fechaOg" />
             <PropertyRef Name="co_serie" />
             <PropertyRef Name="co_factura" />
@@ -1795,7 +1795,7 @@
           <Property Type="Int32" Name="IdTipoCbte_Ogiro" Nullable="false" />
           <Property Type="String" Name="IdOrden_giro_Tipo" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Type="Decimal" Name="IdProveedor" Nullable="false" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="SecuenciaProveedor" />
+          <Property Type="Int32" Name="SecuenciaProveedor" Nullable="false" />
           <Property Type="DateTime" Name="co_fechaOg" Nullable="false" Precision="3" />
           <Property Type="String" Name="co_serie" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="co_factura" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -2213,6 +2213,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vwfe_nota_credito_detalle">
+            <EntityTypeMapping TypeName="Model_conexion_efixed.vwfe_nota_credito_detalle">
+              <MappingFragment StoreEntitySet="vwfe_nota_credito_detalle">
+                <ScalarProperty Name="pr_descripcion_2" ColumnName="pr_descripcion_2" />
+                <ScalarProperty Name="pr_descripcion" ColumnName="pr_descripcion" />
+                <ScalarProperty Name="pr_codigo2" ColumnName="pr_codigo2" />
+                <ScalarProperty Name="pr_codigo" ColumnName="pr_codigo" />
+                <ScalarProperty Name="vt_por_iva" ColumnName="vt_por_iva" />
+                <ScalarProperty Name="sc_observacion" ColumnName="sc_observacion" />
+                <ScalarProperty Name="sc_costo" ColumnName="sc_costo" />
+                <ScalarProperty Name="sc_total" ColumnName="sc_total" />
+                <ScalarProperty Name="sc_iva" ColumnName="sc_iva" />
+                <ScalarProperty Name="sc_subtotal" ColumnName="sc_subtotal" />
+                <ScalarProperty Name="sc_precioFinal" ColumnName="sc_precioFinal" />
+                <ScalarProperty Name="sc_PordescUni" ColumnName="sc_PordescUni" />
+                <ScalarProperty Name="sc_descUni" ColumnName="sc_descUni" />
+                <ScalarProperty Name="sc_Precio" ColumnName="sc_Precio" />
+                <ScalarProperty Name="sc_cantidad" ColumnName="sc_cantidad" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="IdNota" ColumnName="IdNota" />
+                <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vwfe_guia_remision">
             <EntityTypeMapping TypeName="Model_conexion_efixed.vwfe_guia_remision">
               <MappingFragment StoreEntitySet="vwfe_guia_remision">
@@ -2259,33 +2286,6 @@
                 <ScalarProperty Name="CodDocumentoTipo" ColumnName="CodDocumentoTipo" />
                 <ScalarProperty Name="CodGuiaRemision" ColumnName="CodGuiaRemision" />
                 <ScalarProperty Name="IdGuiaRemision" ColumnName="IdGuiaRemision" />
-                <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
-                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vwfe_nota_credito_detalle">
-            <EntityTypeMapping TypeName="Model_conexion_efixed.vwfe_nota_credito_detalle">
-              <MappingFragment StoreEntitySet="vwfe_nota_credito_detalle">
-                <ScalarProperty Name="pr_descripcion_2" ColumnName="pr_descripcion_2" />
-                <ScalarProperty Name="pr_descripcion" ColumnName="pr_descripcion" />
-                <ScalarProperty Name="pr_codigo2" ColumnName="pr_codigo2" />
-                <ScalarProperty Name="pr_codigo" ColumnName="pr_codigo" />
-                <ScalarProperty Name="vt_por_iva" ColumnName="vt_por_iva" />
-                <ScalarProperty Name="sc_observacion" ColumnName="sc_observacion" />
-                <ScalarProperty Name="sc_costo" ColumnName="sc_costo" />
-                <ScalarProperty Name="sc_total" ColumnName="sc_total" />
-                <ScalarProperty Name="sc_iva" ColumnName="sc_iva" />
-                <ScalarProperty Name="sc_subtotal" ColumnName="sc_subtotal" />
-                <ScalarProperty Name="sc_precioFinal" ColumnName="sc_precioFinal" />
-                <ScalarProperty Name="sc_PordescUni" ColumnName="sc_PordescUni" />
-                <ScalarProperty Name="sc_descUni" ColumnName="sc_descUni" />
-                <ScalarProperty Name="sc_Precio" ColumnName="sc_Precio" />
-                <ScalarProperty Name="sc_cantidad" ColumnName="sc_cantidad" />
-                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
-                <ScalarProperty Name="IdNota" ColumnName="IdNota" />
                 <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
                 <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
                 <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
@@ -2372,7 +2372,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

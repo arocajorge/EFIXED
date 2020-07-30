@@ -109,7 +109,7 @@ namespace FirmElect.Data
                                    imp.codigo = dtrDetalleRet.GetString(1);
                                    imp.codigoRetencion = dtrDetalleRet.GetString(2);
                                    imp.baseImponible = dtrDetalleRet.GetDecimal(3);
-                                   imp.porcentajeRetener = Convert.ToDecimal(dtrDetalleRet.GetInt32(4));
+                                   imp.porcentajeRetener = Convert.ToDecimal(dtrDetalleRet.GetDecimal(4));
                                    imp.valorRetenido = dtrDetalleRet.GetDecimal(5);
                                    imp.codDocSustento = dtrDetalleRet.GetString(6);
                                    imp.numDocSustento = dtrDetalleRet.GetString(7);

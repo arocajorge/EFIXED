@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\192.168.25.29\Ride\</PublishUrl>
+    <PublishUrl>\\192.168.50.1\Instalador Efirm\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -22,13 +22,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\192.168.25.29\Ride\</InstallUrl>
+    <InstallUrl>\\192.168.50.1\Instalador Efirm\</InstallUrl>
     <ProductName>Efixed</ProductName>
     <PublisherName>Efixed</PublisherName>
     <SuiteName>Efixed</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>104</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -564,6 +564,7 @@
     <EmbeddedResource Include="frmBuscar_comprobantes.resx">
       <DependentUpon>frmBuscar_comprobantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UC_CargarComprobantes.resx">
       <DependentUpon>UC_CargarComprobantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,10 +759,10 @@
     <EmbeddedResource Include="UC_TipoDocumento.resx">
       <DependentUpon>UC_TipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App_.config">
+    <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="App.config">
+    <None Include="App__.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="dsErrors.xsc">
