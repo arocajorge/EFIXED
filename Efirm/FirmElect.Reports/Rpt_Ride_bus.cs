@@ -46,6 +46,8 @@ namespace FirmElect.Reports
         String Ruta_Reporte_Ret = Ruta_Temporal + @"Comprobante_Ret.repx";
         String Ruta_Reporte_NC = Ruta_Temporal + @"Comprobante_NC.repx";
         String Ruta_Reporte_ND = Ruta_Temporal + @"Comprobante_ND.repx";
+        String Ruta_Reporte_LC = Ruta_Temporal + @"Comprobante_LC.repx";
+
         Funciones funciones = new Funciones();
 
 
@@ -73,6 +75,7 @@ namespace FirmElect.Reports
                 catch (Exception )
                 {
                 }
+                OBusLiquidacion = new Rpt_Ride_GEN_Liquidacion();
 
                 if (SNemonico_RIDE == "" || SNemonico_RIDE==null)
                 {
@@ -81,8 +84,8 @@ namespace FirmElect.Reports
                     OBusReporteGuia_Remi = new Rpt_Ride_GEN_Guia_Remis();
                     OBusReporteNotaCred = new Rpt_Ride_GEN_NotaCred();
                     OBusReporteNotaDeb = new Rpt_Ride_GEN_NotaDeb();
-                    OBusLiquidacion = new Rpt_Ride_GEN_Liquidacion();
                 }
+
                 else// instancio por string las clases 
                 {
                     #region Instancia de Factura
@@ -449,9 +452,9 @@ namespace FirmElect.Reports
                             info_liquidacion = DataCbte.consultar_liquidacion_compra_ride(InfoCbte.IdEmpresa, InfoCbte.IdComprobante, InfoCbte.IdTipoDocumento, InfoCbte.IdEstado_cbte, ref mensajeErrorOut);
                             info_liquidacion.Logo = Logo;
                             info_liquidacion.numeros_en_letras = funciones.NumeroALetras(info_liquidacion.factura.infoLiquidacionCompra.importeTotal.ToString());
-                            File.WriteAllBytes(Ruta_Reporte_Fac, Info.ReporteBy);
+                            File.WriteAllBytes(Ruta_Reporte_LC, Info.ReporteBy);
                             Reporte = OBusLiquidacion.Optener_reporte(info_liquidacion);
-                            Reporte.LoadLayout(Ruta_Reporte_Fac);
+                            Reporte.LoadLayout(Ruta_Reporte_LC);
 
                         }
 

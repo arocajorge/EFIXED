@@ -62,6 +62,10 @@ namespace FirmElect.Bus
                         case "FIXED":
                             Odata = new tb_Comprobante_Procesos_externos_GRAFINPREN();
                             return Odata.GrabarDB(InfoCbte, ref MensajeErrorOut, cadena);
+
+                        case "ACERG":
+                            Odata = new tb_Comprobante_Procesos_externos_GRAFINPREN();
+                            return Odata.GrabarDB(InfoCbte, ref MensajeErrorOut, cadena);
                        
                     }
                     return true;

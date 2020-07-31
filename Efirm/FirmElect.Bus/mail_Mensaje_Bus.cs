@@ -475,16 +475,16 @@ namespace FirmElect.Bus
                tipo_conex_cifrada_smtp = InfoCtaMail_Remitente.tipo_Seguridad;
                if (MensajeInfo.Para == "")
                    return false;
-               oSmtpMail_msg.To.Add(MensajeInfo.Para);
+              //oSmtpMail_msg.To.Add(MensajeInfo.Para);
 
-               if (MensajeInfo.Para_CC != "" && MensajeInfo.Para_CC != null)
+               if (MensajeInfo.Para != "" && MensajeInfo.Para != null)
                {
 
-                   string[] slistaCorreo = MensajeInfo.Para_CC.Split(';');
+                   string[] slistaCorreo = MensajeInfo.Para.Split(';');
 
                    foreach (var item in slistaCorreo)
                    {
-                       oSmtpMail_msg.CC.Add(item.Trim());
+                       oSmtpMail_msg.To.Add(item.Trim());
 
                    }
                }

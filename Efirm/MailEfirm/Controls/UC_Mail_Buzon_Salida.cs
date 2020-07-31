@@ -129,9 +129,11 @@ namespace MailEfirm.Controls
             {
 
 
-                
+                string mensajeErrorOut = "";
 
-               
+
+                listMail_x_Empresa = BusctaxEm.Consulta_mail_Cuentas_Correo_x_Empresa(ref mensajeErrorOut);
+
 
                 cl_parametrosGenerales_Bus BusParam = new cl_parametrosGenerales_Bus();
 

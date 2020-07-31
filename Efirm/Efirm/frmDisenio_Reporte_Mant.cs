@@ -32,6 +32,7 @@ namespace Efirm
         xRpt_Ride_NotaDebito_Gen ReporteNota_Deb = new xRpt_Ride_NotaDebito_Gen();
         xRpt_Ride_Retencion_Gen ReporteRetencion = new xRpt_Ride_Retencion_Gen();
         xRpt_Ride_GuiaRemision_Gen ReporteGuia = new xRpt_Ride_GuiaRemision_Gen();
+        xRpt_liquidacion_compraGen Reporte_lc = new xRpt_liquidacion_compraGen();
 
         xRpt_Ride_Factura_Gen_DatosAdicionales ReporteFactura_DatosAdicionales = new xRpt_Ride_Factura_Gen_DatosAdicionales();
         xRpt_Ride_Factura_Gen_Forma_Pago ReporteFormaPago = new xRpt_Ride_Factura_Gen_Forma_Pago();
@@ -120,7 +121,23 @@ namespace Efirm
                         xrDesignDockManager.XRDesignPanel.OpenReport(ReporteNota_Cred);
                     }
                 }
+                 if (Info.IdComprobante_tipo == "03")
+                {
+                    if (Info.ReporteBy != null)
+                    {
+                        File.WriteAllBytes(RootReporte, Info.ReporteBy);
 
+                        ReporteNota_Cred.LoadLayout(RootReporte);
+                        xrDesignDockManager.XRDesignPanel.OpenReport(Reporte_lc);
+                    }
+                    else
+                    {
+                        Info.IdComprobante_tipo = "03";
+                        ReporteNota_Cred.CreateDocument();
+                        xrDesignDockManager.XRDesignPanel.OpenReport(Reporte_lc);
+                    }
+                }
+                
                 if (Info.IdComprobante_tipo == "05")
                 {
                     if (Info.ReporteBy != null)
