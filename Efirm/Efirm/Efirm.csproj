@@ -762,9 +762,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="App__.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="dsErrors.xsc">
       <DependentUpon>dsErrors.xsd</DependentUpon>
     </None>
