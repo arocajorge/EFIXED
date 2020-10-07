@@ -563,7 +563,6 @@
     <EmbeddedResource Include="frmBuscar_comprobantes.resx">
       <DependentUpon>frmBuscar_comprobantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="UC_CargarComprobantes.resx">
       <DependentUpon>UC_CargarComprobantes.cs</DependentUpon>
     </EmbeddedResource>
