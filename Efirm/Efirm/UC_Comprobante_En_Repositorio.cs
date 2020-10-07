@@ -18,7 +18,7 @@ using DevExpress.XtraSplashScreen;
 using System.Globalization;
 using System.Threading;
 using System.Xml.Linq;
-
+using System.Linq;
 
 
 
@@ -33,7 +33,8 @@ namespace Efirm
         BindingList<Archivo_Info> listArchivos = new BindingList<Archivo_Info>();
         mail_Parametro_Info info_mail_param = new mail_Parametro_Info();
         tb_Empresa_Info InfoEmpresa;
-
+        tb_Catalogo_Bus busCatalogo = new tb_Catalogo_Bus();
+        List<tb_Catalogo_Info> lstCatalogoLeyenda = new List<tb_Catalogo_Info>();
         public delegate void delegate_fileSystemWatcherRepositorio_Created(object sender, FileSystemEventArgs e,string mensajeOut);
         public event delegate_fileSystemWatcherRepositorio_Created Event_fileSystemWatcherRepositorio_Created;
 
@@ -512,21 +513,38 @@ namespace Efirm
         {
             try
             {
+                InfoEmpresa = new tb_Empresa_Info();
+                string RucEmisor = xmlcomprobante.GetElementsByTagName("ruc")[0].InnerText.Trim();
+                InfoEmpresa = listadoEmpresa.Where(q => q.RUC.Trim() == RucEmisor.Trim()).FirstOrDefault();
+
+                if (InfoEmpresa == null)
+                    return;
+
+                if (lstCatalogoLeyenda.Count == 0)
+                    return;
+
+                
                 var rootElement = XElement.Parse(xmlcomprobante.InnerXml.ToString());
                 var infoAdicional = rootElement.Element("infoAdicional");
                 if (infoAdicional == null)
                 {
-                    //Validar si aplica la leyenda
-                    XElement xmlinfoAdicional = new XElement("infoAdicional",
-                        new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS"),
+                    XElement xmlinfoAdicional = new XElement("infoAdicional",new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS"),
                         new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001"));
-                    rootElement.Add(xmlinfoAdicional);
                     xmlcomprobante.GetElementsByTagName("comprobante")[0].InnerXml += xmlinfoAdicional.ToString();
                 }
                 else
                 {
-                    rootElement.Element("infoAdicional").Add(new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS"),
-                        new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001"));
+                    if (1==1)
+                    {
+                        XElement xmlCamposAdicionales1 = new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS");
+                        xmlcomprobante.GetElementsByTagName("infoAdicional")[0].InnerXml += xmlCamposAdicionales1.ToString();    
+                    }
+
+                    if (2==2)
+                    {
+                        XElement xmlCamposAdicionales2 = new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001");
+                        xmlcomprobante.GetElementsByTagName("infoAdicional")[0].InnerXml += xmlCamposAdicionales2.ToString();    
+                    }
                 }
             }
             catch (Exception ex)
@@ -567,7 +585,8 @@ namespace Efirm
 
             InfoEmpresa = new tb_Empresa_Info();
             RucEmisor = xmlcomprobante.GetElementsByTagName("ruc")[0].InnerText.Trim();
-            InfoEmpresa = listadoEmpresa.Find(v => v.RUC.Trim() == RucEmisor.Trim());
+            InfoEmpresa = listadoEmpresa.Where(q=> q.RUC.Trim() == RucEmisor.Trim()).FirstOrDefault();
+            //InfoEmpresa = listadoEmpresa.Find(v => v.RUC.Trim() == RucEmisor.Trim());
 
             if (InfoEmpresa == null)
             {
@@ -1108,7 +1127,7 @@ namespace Efirm
                 string mensajeErrorOut = "";
                 mail_Parametro_Bus bus_mail_parametro=new mail_Parametro_Bus();
                 info_mail_param = bus_mail_parametro.consultar(ref mensajeErrorOut);
-
+                lstCatalogoLeyenda = busCatalogo.Consulta_Catalogo_x_IdTipoCatalogo(8);
             }
             catch (Exception ex)
             {
