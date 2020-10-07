@@ -522,28 +522,56 @@ namespace Efirm
 
                 if (lstCatalogoLeyenda.Count == 0)
                     return;
-
                 
                 var rootElement = XElement.Parse(xmlcomprobante.InnerXml.ToString());
                 var infoAdicional = rootElement.Element("infoAdicional");
                 if (infoAdicional == null)
                 {
-                    XElement xmlinfoAdicional = new XElement("infoAdicional",new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS"),
-                        new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001"));
+                    XElement xmlinfoAdicional = null;
+
+                    var CatalogoMicro = lstCatalogoLeyenda.Where(q => q.IdCatalogo == InfoEmpresa.IdCatalogo_micro_emp).FirstOrDefault();
+                    var CatalogoAgente = lstCatalogoLeyenda.Where(q => q.IdCatalogo == InfoEmpresa.IdCatalogo_agent_ret).FirstOrDefault();
+
+                    if (CatalogoMicro != null && CatalogoAgente != null)
+                    {
+                        xmlinfoAdicional = new XElement("infoAdicional", new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), CatalogoMicro.Descripcion),
+                            new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), CatalogoAgente.Descripcion));
+                    }
+                    else
+                        if (CatalogoMicro != null && CatalogoAgente == null)
+                        {
+                            xmlinfoAdicional = new XElement("infoAdicional", new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), CatalogoMicro.Descripcion));
+                        }
+                        else
+                            if (CatalogoMicro == null && CatalogoAgente != null)
+                            {
+                                xmlinfoAdicional = new XElement("infoAdicional", new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), CatalogoAgente.Descripcion));
+                            }
+                            else
+                                return;
+                    
                     xmlcomprobante.GetElementsByTagName("comprobante")[0].InnerXml += xmlinfoAdicional.ToString();
                 }
                 else
                 {
-                    if (1==1)
+                    if (!string.IsNullOrEmpty(InfoEmpresa.IdCatalogo_micro_emp))
                     {
-                        XElement xmlCamposAdicionales1 = new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS");
-                        xmlcomprobante.GetElementsByTagName("infoAdicional")[0].InnerXml += xmlCamposAdicionales1.ToString();    
+                        var Catalogo = lstCatalogoLeyenda.Where(q => q.IdCatalogo == InfoEmpresa.IdCatalogo_micro_emp).FirstOrDefault();
+                        if (Catalogo != null)
+                        {
+                            XElement xmlCamposAdicionales1 = new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), Catalogo.Descripcion);
+                            xmlcomprobante.GetElementsByTagName("infoAdicional")[0].InnerXml += xmlCamposAdicionales1.ToString();        
+                        }
                     }
 
-                    if (2==2)
+                    if (!string.IsNullOrEmpty(InfoEmpresa.IdCatalogo_agent_ret))
                     {
-                        XElement xmlCamposAdicionales2 = new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001");
-                        xmlcomprobante.GetElementsByTagName("infoAdicional")[0].InnerXml += xmlCamposAdicionales2.ToString();    
+                        var Catalogo = lstCatalogoLeyenda.Where(q => q.IdCatalogo == InfoEmpresa.IdCatalogo_agent_ret).FirstOrDefault();
+                        if (Catalogo != null)
+                        {
+                            XElement xmlCamposAdicionales2 = new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), Catalogo.Descripcion);
+                            xmlcomprobante.GetElementsByTagName("infoAdicional")[0].InnerXml += xmlCamposAdicionales2.ToString();
+                        }
                     }
                 }
             }

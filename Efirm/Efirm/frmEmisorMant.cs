@@ -84,8 +84,8 @@ namespace Efirm
                 InfoEmp.Formato_fecha_Base_ext = cmb_formato_fecha.SelectedValue.ToString();
                 InfoEmp.Formato_hora_Base_ext = cmb_formato_hora.SelectedValue.ToString();
                 InfoEmp.Nombre_tabla_Base_ext = txt_nom_tabla.Text;
-
-
+                InfoEmp.IdCatalogo_agent_ret =cmb_agen_ret==null?null: cmb_agen_ret.EditValue.ToString();
+                InfoEmp.IdCatalogo_micro_emp = cmb_micro.EditValue == null ? null : cmb_micro.EditValue.ToString();
                 if (pic_foto.Image != null)
                 {
                     MemoryStream memimagen = new MemoryStream();
@@ -157,17 +157,16 @@ namespace Efirm
                 txtNemRIDE.Text = InfoEmp.Nemonico_RIDE;
                 cmbNotifCliente.Text = InfoEmp.Tipo_Notificacion_a_cliente;
                 cmbBaseExt.Text = InfoEmp.Tipo_Base_Exterior;
-                //txtCodEmpBDExt.Text = InfoEmp.Cod_Empresa_Para_DB_Ext;
                 txtCadConExt.Text = InfoEmp.cadena_conexion_Exterior;
-                MemoryStream ms = new MemoryStream(InfoEmp.logo);
-                pic_foto.Image = System.Drawing.Bitmap.FromStream(ms);
 
                 txt_nom_tabla.Text = InfoEmp.Nombre_tabla_Base_ext;
                 cmb_formato_fecha.SelectedValue = InfoEmp.Formato_fecha_Base_ext;
                 cmb_formato_hora.SelectedValue = InfoEmp.Formato_hora_Base_ext;
                 cmb_empresa_ext.SelectedValue = InfoEmp.Cod_Empresa_Para_DB_Ext;
-
-
+                cmb_micro.EditValue = InfoEmp.IdCatalogo_micro_emp;
+                cmb_agen_ret.EditValue = InfoEmp.IdCatalogo_agent_ret;
+                MemoryStream ms = new MemoryStream(InfoEmp.logo);
+                pic_foto.Image = System.Drawing.Bitmap.FromStream(ms);
             }
             catch (Exception ex)
             {
@@ -219,6 +218,20 @@ namespace Efirm
                 cmb_formato_hora.DataSource = listCatalogo;
                 cmb_formato_hora.DisplayMember = "Descripcion";
                 cmb_formato_hora.ValueMember = "IdCatalogo";
+
+
+                listCatalogo = new List<tb_Catalogo_Info>();
+                listCatalogo = busCatalogo.Consulta_Catalogo_x_IdTipoCatalogo(8);
+
+
+                cmb_agen_ret.Properties.DataSource = listCatalogo;
+                cmb_agen_ret.Properties.DisplayMember = "Descripcion";
+                cmb_agen_ret.Properties.ValueMember = "IdCatalogo";
+
+
+                cmb_micro.Properties.DataSource = listCatalogo;
+                cmb_micro.Properties.DisplayMember = "Descripcion";
+                cmb_micro.Properties.ValueMember = "IdCatalogo";
 
                 tb_Empresa_externa_Bus BusEmpresa_Exter = new tb_Empresa_externa_Bus();
                 List<tb_Empresa_externa_Info> listEmpre_ext = new List<tb_Empresa_externa_Info>();

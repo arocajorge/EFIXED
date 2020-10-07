@@ -794,8 +794,8 @@
           <Property Name="IdComprobante" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="Total" Type="float" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.tb_comprobantes_No_Generados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.tb_comprobantes_No_Generados' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="tb_comprobantes_No_Generados">
           <Key>
@@ -871,6 +871,8 @@
           <Property Name="Formato_fecha_Base_ext" Type="varchar" MaxLength="20" />
           <Property Name="Formato_hora_Base_ext" Type="varchar" MaxLength="20" />
           <Property Name="Nombre_tabla_Base_ext" Type="varchar" MaxLength="50" />
+          <Property Name="IdCatalogo_micro_emp" Type="varchar" MaxLength="50" />
+          <Property Name="IdCatalogo_agent_ret" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tb_Empresa_externa">
           <Key>
@@ -999,8 +1001,8 @@
           <Property Name="Nom_usuario_tocken" Type="varchar" Nullable="false" MaxLength="150" />
           <Property Name="estado" Type="char" Nullable="false" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_Comprobante' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Comprobante">
           <Key>
@@ -1041,8 +1043,8 @@
           <Property Name="Cod_Empresa_Para_DB_Ext" Type="varchar" MaxLength="20" />
           <Property Name="Total" Type="float" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobante_Autorizados_Enviados_NoEnviados_mail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_Comprobante_Autorizados_Enviados_NoEnviados_mail' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Comprobante_Autorizados_Enviados_NoEnviados_mail">
           <Key>
@@ -1078,8 +1080,8 @@
           <Property Name="Nom_emisor" Type="varchar" Nullable="false" MaxLength="300" />
           <Property Name="Nom_Contribuyente" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_comprobante_pendiente_de_Autorizacion_sri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_comprobante_pendiente_de_Autorizacion_sri' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_comprobante_pendiente_de_Autorizacion_sri">
           <Key>
@@ -1116,8 +1118,8 @@
           <Property Name="Clave_Acceso" Type="varchar" MaxLength="100" />
           <Property Name="Nom_Contribuyente" Type="varchar" MaxLength="250" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobante_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_Comprobante_Tipo' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Comprobante_Tipo">
           <Key>
@@ -1135,8 +1137,8 @@
           <Property Name="IdComprobante_tipo" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="RUC" Type="varchar" Nullable="false" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Comprobantes_recibidos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_Comprobantes_recibidos' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Comprobantes_recibidos">
           <Key>
@@ -1170,8 +1172,8 @@
           <Property Name="Ambiente" Type="varchar" Nullable="false" MaxLength="1" />
           <Property Name="TipoDocumento" Type="varchar" Nullable="false" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_mail_Cuentas_Correo_x_mail_Mensaje_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_mail_Cuentas_Correo_x_mail_Mensaje_Tipo' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_mail_Cuentas_Correo_x_mail_Mensaje_Tipo">
           <Key>
@@ -1186,8 +1188,8 @@
           <Property Name="orden" Type="int" />
           <Property Name="estado" Type="varchar" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vw_Mensaje_x_Contribuyente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vw_Mensaje_x_Contribuyente' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vw_Mensaje_x_Contribuyente">
           <Key>
@@ -1219,7 +1221,7 @@
           <Property Name="IdEmpresa" Type="int" />
           <Property Name="cedulaRuc_contri" Type="varchar" MaxLength="20" />
           <Property Name="Nom_Contribuyente" Type="varchar" MaxLength="250" />
-          <Property Name="Mail" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar(max)" />
           <Property Name="Mail_secundario" Type="varchar" MaxLength="100" />
           <Property Name="EsCliente" Type="bit" />
           <Property Name="EsProveedor" Type="bit" />
@@ -1238,8 +1240,8 @@
           <Property Name="Archivo_correo" Type="varbinary(max)" />
           <Property Name="Para_CCO" Type="varchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwseg_menu_x_tb_empresa_x_seg_usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vwseg_menu_x_tb_empresa_x_seg_usuario' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwseg_menu_x_tb_empresa_x_seg_usuario">
           <Key>
@@ -1259,8 +1261,8 @@
           <Property Name="consultar" Type="bit" Nullable="false" />
           <Property Name="anular" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwseg_usuario_x_tb_empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vwseg_usuario_x_tb_empresa' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwseg_usuario_x_tb_empresa">
           <Key>
@@ -1276,8 +1278,8 @@
           <Property Name="us_contrasenia" Type="varchar" Nullable="false" MaxLength="300" />
           <Property Name="us_nombre" Type="varchar" Nullable="false" MaxLength="300" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwSerWeb_Comprobante' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vwSerWeb_Comprobante' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwSerWeb_Comprobante">
           <Key>
@@ -1303,8 +1305,8 @@
           <Property Name="IdContribuyente" Type="numeric" />
           <Property Name="Nom_Contribuyente" Type="varchar" MaxLength="250" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.vwtb_Comprobante_para_exportar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.vwtb_Comprobante_para_exportar' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="vwtb_Comprobante_para_exportar">
           <Key>
@@ -1337,8 +1339,8 @@
           <Property Name="Cod_Empresa_Para_DB_Ext" Type="varchar" MaxLength="20" />
           <Property Name="Nom_Contribuyente" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'Facturacion_electronica_offline.dbo.wv_mail_Cuentas_Correo_x_Empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+        <!--Se encontraron errores durante la generación:
+      advertencia 6002: La tabla o vista 'DBFacturacion_Electronica.dbo.wv_mail_Cuentas_Correo_x_Empresa' no tiene ninguna clave principal definida. Se ha inferido la clave y la definición se creó como vista o tabla de solo lectura.
       -->
         <EntityType Name="wv_mail_Cuentas_Correo_x_Empresa">
           <Key>
@@ -1869,38 +1871,13 @@
           <EntitySet Name="vwseg_usuario_x_tb_empresa" EntityType="DBFacturacion_ElectronicaModel.vwseg_usuario_x_tb_empresa" />
           <EntitySet Name="seg_usuario" EntityType="DBFacturacion_ElectronicaModel.seg_usuario" />
           <EntitySet Name="seg_usuario_x_tb_empresa" EntityType="DBFacturacion_ElectronicaModel.seg_usuario_x_tb_empresa" />
-          <EntitySet Name="tb_Empresa" EntityType="DBFacturacion_ElectronicaModel.tb_Empresa" />
-          <AssociationSet Name="FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
-            <End Role="mail_Cuentas_Correo_x_Empresa" EntitySet="mail_Cuentas_Correo_x_Empresa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_seg_menu_x_tb_empresa_tb_empresa" Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_tb_empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
-            <End Role="seg_menu_x_tb_empresa" EntitySet="seg_menu_x_tb_empresa" />
-          </AssociationSet>
           <AssociationSet Name="FK_seg_menu_x_tb_empresa_x_seg_usuario_seg_usuario" Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_seg_usuario">
             <End Role="seg_usuario" EntitySet="seg_usuario" />
-            <End Role="seg_menu_x_tb_empresa_x_seg_usuario" EntitySet="seg_menu_x_tb_empresa_x_seg_usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa" Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
             <End Role="seg_menu_x_tb_empresa_x_seg_usuario" EntitySet="seg_menu_x_tb_empresa_x_seg_usuario" />
           </AssociationSet>
           <AssociationSet Name="FK_seg_usuario_x_tb_empresa_seg_usuario" Association="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_seg_usuario">
             <End Role="seg_usuario" EntitySet="seg_usuario" />
             <End Role="seg_usuario_x_tb_empresa" EntitySet="seg_usuario_x_tb_empresa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_seg_usuario_x_tb_empresa_tb_empresa" Association="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
-            <End Role="seg_usuario_x_tb_empresa" EntitySet="seg_usuario_x_tb_empresa" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_Clave_Contin_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_tb_Clave_Contin_tb_Empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
-            <End Role="tb_Clave_Conting" EntitySet="tb_Clave_Conting" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_Sucursal_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_tb_Sucursal_tb_Empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
-            <End Role="tb_Sucursal" EntitySet="tb_Sucursal" />
           </AssociationSet>
           <EntitySet Name="tb_Comprobante" EntityType="DBFacturacion_ElectronicaModel.tb_Comprobante" />
           <AssociationSet Name="FK_tb_Comprobante_tb_Catalogo1" Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Catalogo1">
@@ -1915,10 +1892,6 @@
             <End Role="tb_Comprobante_tipo_estado" EntitySet="tb_Comprobante_tipo_estado" />
             <End Role="tb_Comprobante" EntitySet="tb_Comprobante" />
           </AssociationSet>
-          <AssociationSet Name="FK_tb_Comprobante_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa">
-            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
-            <End Role="tb_Comprobante" EntitySet="tb_Comprobante" />
-          </AssociationSet>
           <EntitySet Name="tb_Parametro" EntityType="DBFacturacion_ElectronicaModel.tb_Parametro" />
           <EntitySet Name="tb_comprobante_x_valor" EntityType="DBFacturacion_ElectronicaModel.tb_comprobante_x_valor" />
           <FunctionImport Name="sp_consulta_x_Mensaje_x_Pagina" ReturnType="Collection(DBFacturacion_ElectronicaModel.sp_consulta_x_Mensaje_x_Pagina_Result)">
@@ -1929,6 +1902,35 @@
             <Parameter Name="CadenaBusqueda" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="tb_facturas_eventos" EntityType="DBFacturacion_ElectronicaModel.tb_facturas_eventos" />
+          <EntitySet Name="tb_Empresa" EntityType="DBFacturacion_ElectronicaModel.tb_Empresa" />
+          <AssociationSet Name="FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="mail_Cuentas_Correo_x_Empresa" EntitySet="mail_Cuentas_Correo_x_Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_seg_menu_x_tb_empresa_tb_empresa" Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_tb_empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="seg_menu_x_tb_empresa" EntitySet="seg_menu_x_tb_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa" Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="seg_menu_x_tb_empresa_x_seg_usuario" EntitySet="seg_menu_x_tb_empresa_x_seg_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_seg_usuario_x_tb_empresa_tb_empresa" Association="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="seg_usuario_x_tb_empresa" EntitySet="seg_usuario_x_tb_empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Clave_Contin_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_tb_Clave_Contin_tb_Empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="tb_Clave_Conting" EntitySet="tb_Clave_Conting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Comprobante_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="tb_Comprobante" EntitySet="tb_Comprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_Sucursal_tb_Empresa" Association="DBFacturacion_ElectronicaModel.FK_tb_Sucursal_tb_Empresa">
+            <End Role="tb_Empresa" EntitySet="tb_Empresa" />
+            <End Role="tb_Sucursal" EntitySet="tb_Sucursal" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="mail_Catalogo">
           <Key>
@@ -2625,7 +2627,7 @@
           <Property Type="Int32" Name="IdEmpresa" />
           <Property Type="String" Name="cedulaRuc_contri" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Nom_Contribuyente" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Mail" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Mail" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Mail_secundario" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="EsCliente" />
           <Property Type="Boolean" Name="EsProveedor" />
@@ -3016,67 +3018,6 @@
           <NavigationProperty Name="seg_usuario" Relationship="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_seg_usuario" FromRole="seg_usuario_x_tb_empresa" ToRole="seg_usuario" />
           <NavigationProperty Name="tb_Empresa" Relationship="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa" FromRole="seg_usuario_x_tb_empresa" ToRole="tb_Empresa" />
         </EntityType>
-        <EntityType Name="tb_Empresa">
-          <Key>
-            <PropertyRef Name="IdEmpresa" />
-          </Key>
-          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
-          <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NombreComercial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="RUC" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="DirMatriz" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ContribuyenteEspecial" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ObligadoAllevarConta" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NombreCertificado" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Clave_Certificado" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="FechaValidez" Precision="3" />
-          <Property Type="Boolean" Name="Estado" Nullable="false" />
-          <Property Type="Binary" Name="logo" MaxLength="Max" FixedLength="false" />
-          <Property Type="String" Name="Alias" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="IdToquenAFirmar" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cod_Ambiente" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cod_TipoEmision" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="url" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Tipo_Notificacion_a_cliente" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nemonico_RIDE" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Tipo_Base_Exterior" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cadena_conexion_Exterior" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Cod_Empresa_Para_DB_Ext" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Formato_fecha_Base_ext" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Formato_hora_Base_ext" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Nombre_tabla_Base_ext" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="mail_Cuentas_Correo_x_Empresa" Relationship="DBFacturacion_ElectronicaModel.FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa" FromRole="tb_Empresa" ToRole="mail_Cuentas_Correo_x_Empresa" />
-          <NavigationProperty Name="seg_menu_x_tb_empresa" Relationship="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_tb_empresa" FromRole="tb_Empresa" ToRole="seg_menu_x_tb_empresa" />
-          <NavigationProperty Name="seg_menu_x_tb_empresa_x_seg_usuario" Relationship="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa" FromRole="tb_Empresa" ToRole="seg_menu_x_tb_empresa_x_seg_usuario" />
-          <NavigationProperty Name="seg_usuario_x_tb_empresa" Relationship="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa" FromRole="tb_Empresa" ToRole="seg_usuario_x_tb_empresa" />
-          <NavigationProperty Name="tb_Clave_Conting" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Clave_Contin_tb_Empresa" FromRole="tb_Empresa" ToRole="tb_Clave_Conting" />
-          <NavigationProperty Name="tb_Sucursal" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Sucursal_tb_Empresa" FromRole="tb_Empresa" ToRole="tb_Sucursal" />
-          <NavigationProperty Name="tb_Comprobante" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" FromRole="tb_Empresa" ToRole="tb_Comprobante" />
-        </EntityType>
-        <Association Name="FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.mail_Cuentas_Correo_x_Empresa" Role="mail_Cuentas_Correo_x_Empresa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="mail_Cuentas_Correo_x_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_seg_menu_x_tb_empresa_tb_empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.seg_menu_x_tb_empresa" Role="seg_menu_x_tb_empresa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="seg_menu_x_tb_empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_seg_menu_x_tb_empresa_x_seg_usuario_seg_usuario">
           <End Type="DBFacturacion_ElectronicaModel.seg_usuario" Role="seg_usuario" Multiplicity="1" />
           <End Type="DBFacturacion_ElectronicaModel.seg_menu_x_tb_empresa_x_seg_usuario" Role="seg_menu_x_tb_empresa_x_seg_usuario" Multiplicity="*" />
@@ -3089,18 +3030,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.seg_menu_x_tb_empresa_x_seg_usuario" Role="seg_menu_x_tb_empresa_x_seg_usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="seg_menu_x_tb_empresa_x_seg_usuario">
-              <PropertyRef Name="IdEmpresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_seg_usuario_x_tb_empresa_seg_usuario">
           <End Type="DBFacturacion_ElectronicaModel.seg_usuario" Role="seg_usuario" Multiplicity="1" />
           <End Type="DBFacturacion_ElectronicaModel.seg_usuario_x_tb_empresa" Role="seg_usuario_x_tb_empresa" Multiplicity="*" />
@@ -3110,42 +3039,6 @@
             </Principal>
             <Dependent Role="seg_usuario_x_tb_empresa">
               <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_seg_usuario_x_tb_empresa_tb_empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.seg_usuario_x_tb_empresa" Role="seg_usuario_x_tb_empresa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="seg_usuario_x_tb_empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_Clave_Contin_tb_Empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.tb_Clave_Conting" Role="tb_Clave_Conting" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="tb_Clave_Conting">
-              <PropertyRef Name="IdEmpresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_Sucursal_tb_Empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.tb_Sucursal" Role="tb_Sucursal" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="tb_Sucursal">
-              <PropertyRef Name="IdEmpresa" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3181,8 +3074,8 @@
           <NavigationProperty Name="tb_Catalogo" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Catalogo1" FromRole="tb_Comprobante" ToRole="tb_Catalogo" />
           <NavigationProperty Name="tb_Comprobante_estado_proceso" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Comprobante_estado_proceso" FromRole="tb_Comprobante" ToRole="tb_Comprobante_estado_proceso" />
           <NavigationProperty Name="tb_Comprobante_tipo_estado" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Comprobante_tipo_estado" FromRole="tb_Comprobante" ToRole="tb_Comprobante_tipo_estado" />
-          <NavigationProperty Name="tb_Empresa" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" FromRole="tb_Comprobante" ToRole="tb_Empresa" />
           <Property Type="Decimal" Name="IdRegistro" Precision="18" Scale="0" />
+          <NavigationProperty Name="tb_Empresa" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" FromRole="tb_Comprobante" ToRole="tb_Empresa" />
         </EntityType>
         <Association Name="FK_tb_Comprobante_tb_Catalogo1">
           <End Type="DBFacturacion_ElectronicaModel.tb_Catalogo" Role="tb_Catalogo" Multiplicity="1" />
@@ -3217,18 +3110,6 @@
             </Principal>
             <Dependent Role="tb_Comprobante">
               <PropertyRef Name="IdEstado_cbte" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_Comprobante_tb_Empresa">
-          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
-          <End Type="DBFacturacion_ElectronicaModel.tb_Comprobante" Role="tb_Comprobante" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Empresa">
-              <PropertyRef Name="IdEmpresa" />
-            </Principal>
-            <Dependent Role="tb_Comprobante">
-              <PropertyRef Name="IdEmpresa" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3318,6 +3199,129 @@
           <Property Type="String" Name="Nombre_Evento" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Observacion" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="tb_Empresa">
+          <Key>
+            <PropertyRef Name="IdEmpresa" />
+          </Key>
+          <Property Type="Int32" Name="IdEmpresa" Nullable="false" />
+          <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NombreComercial" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DirMatriz" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContribuyenteEspecial" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ObligadoAllevarConta" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NombreCertificado" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Clave_Certificado" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FechaValidez" Precision="3" />
+          <Property Type="Boolean" Name="Estado" Nullable="false" />
+          <Property Type="Binary" Name="logo" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Alias" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdToquenAFirmar" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_Ambiente" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cod_TipoEmision" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="url" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tipo_Notificacion_a_cliente" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nemonico_RIDE" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tipo_Base_Exterior" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cadena_conexion_Exterior" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cod_Empresa_Para_DB_Ext" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Formato_fecha_Base_ext" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Formato_hora_Base_ext" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre_tabla_Base_ext" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdCatalogo_micro_emp" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IdCatalogo_agent_ret" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="mail_Cuentas_Correo_x_Empresa" Relationship="DBFacturacion_ElectronicaModel.FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa" FromRole="tb_Empresa" ToRole="mail_Cuentas_Correo_x_Empresa" />
+          <NavigationProperty Name="seg_menu_x_tb_empresa" Relationship="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_tb_empresa" FromRole="tb_Empresa" ToRole="seg_menu_x_tb_empresa" />
+          <NavigationProperty Name="seg_menu_x_tb_empresa_x_seg_usuario" Relationship="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa" FromRole="tb_Empresa" ToRole="seg_menu_x_tb_empresa_x_seg_usuario" />
+          <NavigationProperty Name="seg_usuario_x_tb_empresa" Relationship="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa" FromRole="tb_Empresa" ToRole="seg_usuario_x_tb_empresa" />
+          <NavigationProperty Name="tb_Clave_Conting" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Clave_Contin_tb_Empresa" FromRole="tb_Empresa" ToRole="tb_Clave_Conting" />
+          <NavigationProperty Name="tb_Comprobante" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" FromRole="tb_Empresa" ToRole="tb_Comprobante" />
+          <NavigationProperty Name="tb_Sucursal" Relationship="DBFacturacion_ElectronicaModel.FK_tb_Sucursal_tb_Empresa" FromRole="tb_Empresa" ToRole="tb_Sucursal" />
+        </EntityType>
+        <Association Name="FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.mail_Cuentas_Correo_x_Empresa" Role="mail_Cuentas_Correo_x_Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="mail_Cuentas_Correo_x_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_seg_menu_x_tb_empresa_tb_empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.seg_menu_x_tb_empresa" Role="seg_menu_x_tb_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="seg_menu_x_tb_empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.seg_menu_x_tb_empresa_x_seg_usuario" Role="seg_menu_x_tb_empresa_x_seg_usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="seg_menu_x_tb_empresa_x_seg_usuario">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_seg_usuario_x_tb_empresa_tb_empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.seg_usuario_x_tb_empresa" Role="seg_usuario_x_tb_empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="seg_usuario_x_tb_empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Clave_Contin_tb_Empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.tb_Clave_Conting" Role="tb_Clave_Conting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="tb_Clave_Conting">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Comprobante_tb_Empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.tb_Comprobante" Role="tb_Comprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="tb_Comprobante">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Sucursal_tb_Empresa">
+          <End Type="DBFacturacion_ElectronicaModel.tb_Empresa" Role="tb_Empresa" Multiplicity="1" />
+          <End Type="DBFacturacion_ElectronicaModel.tb_Sucursal" Role="tb_Sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Empresa">
+              <PropertyRef Name="IdEmpresa" />
+            </Principal>
+            <Dependent Role="tb_Sucursal">
+              <PropertyRef Name="IdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4210,37 +4214,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tb_Empresa">
-            <EntityTypeMapping TypeName="DBFacturacion_ElectronicaModel.tb_Empresa">
-              <MappingFragment StoreEntitySet="tb_Empresa">
-                <ScalarProperty Name="Nombre_tabla_Base_ext" ColumnName="Nombre_tabla_Base_ext" />
-                <ScalarProperty Name="Formato_hora_Base_ext" ColumnName="Formato_hora_Base_ext" />
-                <ScalarProperty Name="Formato_fecha_Base_ext" ColumnName="Formato_fecha_Base_ext" />
-                <ScalarProperty Name="Cod_Empresa_Para_DB_Ext" ColumnName="Cod_Empresa_Para_DB_Ext" />
-                <ScalarProperty Name="cadena_conexion_Exterior" ColumnName="cadena_conexion_Exterior" />
-                <ScalarProperty Name="Tipo_Base_Exterior" ColumnName="Tipo_Base_Exterior" />
-                <ScalarProperty Name="Nemonico_RIDE" ColumnName="Nemonico_RIDE" />
-                <ScalarProperty Name="Tipo_Notificacion_a_cliente" ColumnName="Tipo_Notificacion_a_cliente" />
-                <ScalarProperty Name="url" ColumnName="url" />
-                <ScalarProperty Name="cod_TipoEmision" ColumnName="cod_TipoEmision" />
-                <ScalarProperty Name="cod_Ambiente" ColumnName="cod_Ambiente" />
-                <ScalarProperty Name="IdToquenAFirmar" ColumnName="IdToquenAFirmar" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="logo" ColumnName="logo" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="FechaValidez" ColumnName="FechaValidez" />
-                <ScalarProperty Name="Clave_Certificado" ColumnName="Clave_Certificado" />
-                <ScalarProperty Name="NombreCertificado" ColumnName="NombreCertificado" />
-                <ScalarProperty Name="ObligadoAllevarConta" ColumnName="ObligadoAllevarConta" />
-                <ScalarProperty Name="ContribuyenteEspecial" ColumnName="ContribuyenteEspecial" />
-                <ScalarProperty Name="DirMatriz" ColumnName="DirMatriz" />
-                <ScalarProperty Name="RUC" ColumnName="RUC" />
-                <ScalarProperty Name="NombreComercial" ColumnName="NombreComercial" />
-                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
-                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_Comprobante">
             <EntityTypeMapping TypeName="DBFacturacion_ElectronicaModel.tb_Comprobante">
               <MappingFragment StoreEntitySet="tb_Comprobante">
@@ -4356,6 +4329,39 @@
                 <ScalarProperty Name="NumFactura" ColumnName="NumFactura" />
                 <ScalarProperty Name="Puntoemision" ColumnName="Puntoemision" />
                 <ScalarProperty Name="Establecimiento" ColumnName="Establecimiento" />
+                <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Empresa">
+            <EntityTypeMapping TypeName="DBFacturacion_ElectronicaModel.tb_Empresa">
+              <MappingFragment StoreEntitySet="tb_Empresa">
+                <ScalarProperty Name="IdCatalogo_agent_ret" ColumnName="IdCatalogo_agent_ret" />
+                <ScalarProperty Name="IdCatalogo_micro_emp" ColumnName="IdCatalogo_micro_emp" />
+                <ScalarProperty Name="Nombre_tabla_Base_ext" ColumnName="Nombre_tabla_Base_ext" />
+                <ScalarProperty Name="Formato_hora_Base_ext" ColumnName="Formato_hora_Base_ext" />
+                <ScalarProperty Name="Formato_fecha_Base_ext" ColumnName="Formato_fecha_Base_ext" />
+                <ScalarProperty Name="Cod_Empresa_Para_DB_Ext" ColumnName="Cod_Empresa_Para_DB_Ext" />
+                <ScalarProperty Name="cadena_conexion_Exterior" ColumnName="cadena_conexion_Exterior" />
+                <ScalarProperty Name="Tipo_Base_Exterior" ColumnName="Tipo_Base_Exterior" />
+                <ScalarProperty Name="Nemonico_RIDE" ColumnName="Nemonico_RIDE" />
+                <ScalarProperty Name="Tipo_Notificacion_a_cliente" ColumnName="Tipo_Notificacion_a_cliente" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="cod_TipoEmision" ColumnName="cod_TipoEmision" />
+                <ScalarProperty Name="cod_Ambiente" ColumnName="cod_Ambiente" />
+                <ScalarProperty Name="IdToquenAFirmar" ColumnName="IdToquenAFirmar" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaValidez" ColumnName="FechaValidez" />
+                <ScalarProperty Name="Clave_Certificado" ColumnName="Clave_Certificado" />
+                <ScalarProperty Name="NombreCertificado" ColumnName="NombreCertificado" />
+                <ScalarProperty Name="ObligadoAllevarConta" ColumnName="ObligadoAllevarConta" />
+                <ScalarProperty Name="ContribuyenteEspecial" ColumnName="ContribuyenteEspecial" />
+                <ScalarProperty Name="DirMatriz" ColumnName="DirMatriz" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="NombreComercial" ColumnName="NombreComercial" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
                 <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
               </MappingFragment>
             </EntityTypeMapping>

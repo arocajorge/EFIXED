@@ -72,6 +72,11 @@
             this.cmbNotifCliente = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_formato_fecha = new System.Windows.Forms.ComboBox();
+            this.cmb_formato_hora = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.btn_crear_ocon = new System.Windows.Forms.Button();
             this.txt_nom_tabla = new DevExpress.XtraEditors.TextEdit();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -109,11 +114,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.cmb_formato_fecha = new System.Windows.Forms.ComboBox();
-            this.cmb_formato_hora = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_micro = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cmb_agen_ret = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label26 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txturl.Properties)).BeginInit();
@@ -132,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNemRIDE.Properties)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_nom_tabla.Properties)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -146,7 +157,10 @@
             this.groupBoxLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_micro.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_agen_ret.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -196,6 +210,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmb_agen_ret);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.cmb_micro);
+            this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.txtResContEsp);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.txturl);
@@ -226,17 +244,17 @@
             // 
             // txtResContEsp
             // 
-            this.txtResContEsp.Location = new System.Drawing.Point(464, 198);
+            this.txtResContEsp.Location = new System.Drawing.Point(496, 222);
             this.txtResContEsp.MaxLength = 5;
             this.txtResContEsp.Name = "txtResContEsp";
-            this.txtResContEsp.Size = new System.Drawing.Size(174, 20);
+            this.txtResContEsp.Size = new System.Drawing.Size(136, 20);
             this.txtResContEsp.TabIndex = 133;
             this.txtResContEsp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(277, 202);
+            this.label20.Location = new System.Drawing.Point(303, 226);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(181, 13);
             this.label20.TabIndex = 132;
@@ -265,10 +283,10 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 227);
+            this.tabControl1.Location = new System.Drawing.Point(0, 248);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(917, 318);
+            this.tabControl1.Size = new System.Drawing.Size(917, 297);
             this.tabControl1.TabIndex = 129;
             // 
             // tabPage5
@@ -280,7 +298,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(909, 260);
+            this.tabPage5.Size = new System.Drawing.Size(909, 271);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Ambiente&Emision /(Files XML)";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -396,7 +414,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(909, 260);
+            this.tabPage1.Size = new System.Drawing.Size(909, 292);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Certificado Digital";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -507,7 +525,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(909, 260);
+            this.tabPage3.Size = new System.Drawing.Size(909, 292);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Parametros/Reporteria";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -545,7 +563,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(909, 260);
+            this.tabPage4.Size = new System.Drawing.Size(909, 292);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Alertas&Notificaciones";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -592,6 +610,61 @@
             this.tabPage2.Text = "Parametros/Inserción (Tabla Externa)";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmb_formato_fecha);
+            this.groupBox1.Controls.Add(this.cmb_formato_hora);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Location = new System.Drawing.Point(623, 82);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(279, 69);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Formato de Fecha /hora  para campos en base exter.";
+            // 
+            // cmb_formato_fecha
+            // 
+            this.cmb_formato_fecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_formato_fecha.FormattingEnabled = true;
+            this.cmb_formato_fecha.Items.AddRange(new object[] {
+            "SQL",
+            "ORACLE"});
+            this.cmb_formato_fecha.Location = new System.Drawing.Point(102, 16);
+            this.cmb_formato_fecha.Name = "cmb_formato_fecha";
+            this.cmb_formato_fecha.Size = new System.Drawing.Size(151, 21);
+            this.cmb_formato_fecha.TabIndex = 49;
+            // 
+            // cmb_formato_hora
+            // 
+            this.cmb_formato_hora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_formato_hora.FormattingEnabled = true;
+            this.cmb_formato_hora.Items.AddRange(new object[] {
+            "SQL",
+            "ORACLE"});
+            this.cmb_formato_hora.Location = new System.Drawing.Point(102, 43);
+            this.cmb_formato_hora.Name = "cmb_formato_hora";
+            this.cmb_formato_hora.Size = new System.Drawing.Size(117, 21);
+            this.cmb_formato_hora.TabIndex = 50;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(22, 16);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(40, 13);
+            this.label23.TabIndex = 47;
+            this.label23.Text = "Fecha:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(29, 38);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(33, 13);
+            this.label24.TabIndex = 48;
+            this.label24.Text = "Hora:";
             // 
             // btn_crear_ocon
             // 
@@ -670,7 +743,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(895, 78);
+            this.tabPage6.Size = new System.Drawing.Size(895, 111);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Insert ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -770,15 +843,15 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 224);
+            this.panel2.Location = new System.Drawing.Point(0, 248);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(827, 223);
+            this.panel2.Size = new System.Drawing.Size(920, 199);
             this.panel2.TabIndex = 129;
             // 
             // chkllevaCont
             // 
             this.chkllevaCont.AutoSize = true;
-            this.chkllevaCont.Location = new System.Drawing.Point(15, 201);
+            this.chkllevaCont.Location = new System.Drawing.Point(46, 224);
             this.chkllevaCont.Name = "chkllevaCont";
             this.chkllevaCont.Size = new System.Drawing.Size(257, 17);
             this.chkllevaCont.TabIndex = 123;
@@ -930,60 +1003,103 @@
             // 
             this.errProvider.ContainerControl = this;
             // 
-            // label23
+            // cmb_micro
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(22, 16);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(40, 13);
-            this.label23.TabIndex = 47;
-            this.label23.Text = "Fecha:";
+            this.cmb_micro.Location = new System.Drawing.Point(142, 195);
+            this.cmb_micro.Name = "cmb_micro";
+            this.cmb_micro.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_micro.Properties.DisplayMember = "Descripcion";
+            this.cmb_micro.Properties.ValueMember = "IdCatalogo";
+            this.cmb_micro.Properties.View = this.gridView4;
+            this.cmb_micro.Size = new System.Drawing.Size(192, 20);
+            this.cmb_micro.TabIndex = 135;
             // 
-            // label24
+            // gridView4
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(29, 38);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(33, 13);
-            this.label24.TabIndex = 48;
-            this.label24.Text = "Hora:";
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
-            // cmb_formato_fecha
+            // gridColumn1
             // 
-            this.cmb_formato_fecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_formato_fecha.FormattingEnabled = true;
-            this.cmb_formato_fecha.Items.AddRange(new object[] {
-            "SQL",
-            "ORACLE"});
-            this.cmb_formato_fecha.Location = new System.Drawing.Point(102, 16);
-            this.cmb_formato_fecha.Name = "cmb_formato_fecha";
-            this.cmb_formato_fecha.Size = new System.Drawing.Size(151, 21);
-            this.cmb_formato_fecha.TabIndex = 49;
+            this.gridColumn1.Caption = "IdCatalogo";
+            this.gridColumn1.FieldName = "IdCatalogo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 502;
             // 
-            // cmb_formato_hora
+            // gridColumn2
             // 
-            this.cmb_formato_hora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_formato_hora.FormattingEnabled = true;
-            this.cmb_formato_hora.Items.AddRange(new object[] {
-            "SQL",
-            "ORACLE"});
-            this.cmb_formato_hora.Location = new System.Drawing.Point(102, 43);
-            this.cmb_formato_hora.Name = "cmb_formato_hora";
-            this.cmb_formato_hora.Size = new System.Drawing.Size(117, 21);
-            this.cmb_formato_hora.TabIndex = 50;
+            this.gridColumn2.Caption = "Descripcion";
+            this.gridColumn2.FieldName = "Descripcion";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 656;
             // 
-            // groupBox1
+            // label25
             // 
-            this.groupBox1.Controls.Add(this.cmb_formato_fecha);
-            this.groupBox1.Controls.Add(this.cmb_formato_hora);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Location = new System.Drawing.Point(623, 82);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 69);
-            this.groupBox1.TabIndex = 51;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Formato de Fecha /hora  para campos en base exter.";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(43, 198);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(76, 13);
+            this.label25.TabIndex = 134;
+            this.label25.Text = "Microempresa:";
+            // 
+            // cmb_agen_ret
+            // 
+            this.cmb_agen_ret.Location = new System.Drawing.Point(437, 196);
+            this.cmb_agen_ret.Name = "cmb_agen_ret";
+            this.cmb_agen_ret.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_agen_ret.Properties.DisplayMember = "Descripcion";
+            this.cmb_agen_ret.Properties.ValueMember = "IdCatalogo";
+            this.cmb_agen_ret.Properties.View = this.gridView5;
+            this.cmb_agen_ret.Size = new System.Drawing.Size(195, 20);
+            this.cmb_agen_ret.TabIndex = 137;
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn3,
+            this.gridColumn4});
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "IdCatalogo";
+            this.gridColumn3.FieldName = "IdCatalogo";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 502;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Descripcion";
+            this.gridColumn4.FieldName = "Descripcion";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 656;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(340, 199);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(91, 13);
+            this.label26.TabIndex = 136;
+            this.label26.Text = "Agente retencion:";
             // 
             // frmEmisorMant
             // 
@@ -1021,6 +1137,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_nom_tabla.Properties)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
@@ -1037,8 +1155,10 @@
             this.groupBoxLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_foto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_micro.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_agen_ret.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1130,5 +1250,15 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.SearchLookUpEdit cmb_agen_ret;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private System.Windows.Forms.Label label26;
+        private DevExpress.XtraEditors.SearchLookUpEdit cmb_micro;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.Label label25;
     }
 }

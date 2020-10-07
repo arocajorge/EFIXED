@@ -70,6 +70,8 @@ namespace FirmElect.Info
         public string Formato_fecha_Base_ext { get; set; }
         public string Formato_hora_Base_ext { get; set; }
         public string Nombre_tabla_Base_ext { get; set; }
+        public string IdCatalogo_micro_emp { get; set; }
+        public string IdCatalogo_agent_ret { get; set; }
 
         public int DiasExpirar { get; set; }
 

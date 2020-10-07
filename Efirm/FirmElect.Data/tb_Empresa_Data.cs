@@ -127,6 +127,8 @@ namespace FirmElect.Data
 
                              Address.Formato_fecha_Base_ext = InfoEmpresa.Formato_fecha_Base_ext;
                              Address.Formato_hora_Base_ext = InfoEmpresa.Formato_hora_Base_ext;
+                             Address.IdCatalogo_agent_ret = InfoEmpresa.IdCatalogo_agent_ret;
+                             Address.IdCatalogo_micro_emp = InfoEmpresa.IdCatalogo_micro_emp;
 
                              Address.url = InfoEmpresa.url;
 
@@ -189,7 +191,8 @@ namespace FirmElect.Data
                   contact.Formato_hora_Base_ext = info.Formato_hora_Base_ext;
 
                   contact.Nombre_tabla_Base_ext = info.Nombre_tabla_Base_ext;
-
+                  contact.IdCatalogo_agent_ret = info.IdCatalogo_agent_ret;
+                  contact.IdCatalogo_micro_emp = info.IdCatalogo_micro_emp;
               
                   oEnti.SaveChanges();               
               }
@@ -304,7 +307,8 @@ var selectEmpresa = from C in OEselecEmpresa.tb_Empresa
                      Cbt.Formato_fecha_Base_ext = item.Formato_fecha_Base_ext;
                      Cbt.Formato_hora_Base_ext = item.Formato_hora_Base_ext;
                      Cbt.Nombre_tabla_Base_ext = item.Nombre_tabla_Base_ext;
-
+                     Cbt.IdCatalogo_micro_emp = item.IdCatalogo_micro_emp;
+                     Cbt.IdCatalogo_agent_ret = item.IdCatalogo_agent_ret;
                      Empresas.Add(Cbt);
                  }                       
                      return Empresas;
@@ -342,6 +346,8 @@ var selectEmpresa = from C in OEselecEmpresa.tb_Empresa
                     Cbt.RazonSocial = item.RazonSocial;
                     Cbt.logo = item.logo;
                     Cbt.Alias = item.Alias;
+                    Cbt.IdCatalogo_micro_emp = item.IdCatalogo_micro_emp;
+                    Cbt.IdCatalogo_agent_ret = item.IdCatalogo_agent_ret;
                     //Cbt.NombreComercial = item.NombreComercial;
                     //Cbt.RUC = item.RUC.Trim();
                     //Cbt.DirMatriz = item.DirMatriz;
@@ -396,6 +402,8 @@ var selectEmpresa = from C in OEselecEmpresa.tb_Empresa
                     Cbt.IdEmpresa = item.IdEmpresa;
                     Cbt.RazonSocial = item.RazonSocial;
                     Cbt.logo = item.logo;
+                    Cbt.IdCatalogo_micro_emp = item.IdCatalogo_micro_emp;
+                    Cbt.IdCatalogo_agent_ret = item.IdCatalogo_agent_ret;
                     //Cbt.NombreComercial = item.NombreComercial;
                     //Cbt.RUC = item.RUC.Trim();
                     //Cbt.DirMatriz = item.DirMatriz;
@@ -446,7 +454,8 @@ var selectEmpresa = from C in OEselecEmpresa.tb_Empresa
                 foreach (var item in selectEmpresa)
                 {
 
-
+                    Cbt.IdCatalogo_micro_emp = item.IdCatalogo_micro_emp;
+                    Cbt.IdCatalogo_agent_ret = item.IdCatalogo_agent_ret;
                     Cbt.IdEmpresa = item.IdEmpresa;
                     Cbt.RazonSocial = item.RazonSocial;
                     Cbt.NombreComercial = item.NombreComercial;
@@ -537,6 +546,8 @@ var selectEmpresa = from C in OEselecEmpresa.tb_Empresa
                     Cbt.Formato_fecha_Base_ext = item.Formato_fecha_Base_ext;
                     Cbt.Formato_hora_Base_ext = item.Formato_hora_Base_ext;
                     Cbt.Nombre_tabla_Base_ext = item.Nombre_tabla_Base_ext;
+                    Cbt.IdCatalogo_micro_emp = item.IdCatalogo_micro_emp;
+                    Cbt.IdCatalogo_agent_ret = item.IdCatalogo_agent_ret;
 
                     Empresas.Add(Cbt);
                 }

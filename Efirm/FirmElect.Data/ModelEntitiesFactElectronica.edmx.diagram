@@ -68,25 +68,25 @@
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.vwseg_usuario_x_tb_empresa" Width="1.5" PointX="3.0111822704836646" PointY="11.989904722194144" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.seg_usuario" Width="1.5" PointX="10.979983716728157" PointY="20.671313429563916" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.seg_usuario_x_tb_empresa" Width="1.5" PointX="4.4818794897207432" PointY="25.398022231365566" />
-        <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_Empresa" Width="1.5" PointX="9.01154815452711" PointY="30.997006237039813" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_tb_empresa" />
         <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_seg_usuario" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa" />
         <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_seg_usuario" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Clave_Contin_tb_Empresa" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Sucursal_tb_Empresa" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_Comprobante" Width="1.5" PointX="8.8901980281296176" PointY="2.03583785986334" />
         <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Catalogo1" />
         <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Comprobante_estado_proceso" />
         <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Comprobante_tipo_estado" />
-        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_Parametro" Width="1.5" PointX="6.9913326199126118" PointY="11.432814707715444" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_comprobante_x_valor" Width="1.5" PointX="7.9231825526446027" PointY="6.2170061349016645" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.vwfe_liquidacion_compra" Width="1.5" PointX="0.61414711392212062" PointY="25.613203060633133" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.vwfe_liquidacion_compra_det" Width="1.5" PointX="0.22837049524689584" PointY="11.942668607431775" />
         <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_facturas_eventos" Width="1.5" PointX="1.8686411426722265" PointY="14.431360564395488" />
+        <EntityTypeShape EntityType="DBFacturacion_ElectronicaModel.tb_Empresa" Width="1.5" PointX="4.6275158397050182" PointY="25.126488578099053" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_mail_Cuentas_Correo_x_Empresa_tb_Empresa" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_tb_empresa" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_menu_x_tb_empresa_x_seg_usuario_tb_empresa" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_seg_usuario_x_tb_empresa_tb_empresa" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Clave_Contin_tb_Empresa" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Comprobante_tb_Empresa" />
+        <AssociationConnector Association="DBFacturacion_ElectronicaModel.FK_tb_Sucursal_tb_Empresa" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
