@@ -661,10 +661,6 @@ namespace Efirm
                         item.Ambiente = (ambiente=="1")?"PRUEBAS":"PRODUCCION";
 
 
-
-                        //FechaEmision = sFechaEmision;
-
-
                         claveAcceso = ComproBus.GeneraClaveAcceso(FechaEmision, tipocomp, RucEmisor, ambiente, serie, numcbte, codNumerico, tipoemision);
                         digitoVer = ComproBus.GeneraDigitoVerificadorModulo11(claveAcceso);
 
@@ -675,9 +671,6 @@ namespace Efirm
                         {
                             
                         }
-                                    
-
-
                     }
                     catch (Exception ex)
                     {
