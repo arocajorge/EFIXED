@@ -236,7 +236,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="xRpt_liquidacion_compraGen.resx">
       <DependentUpon>xRpt_liquidacion_compraGen.cs</DependentUpon>
     </EmbeddedResource>
