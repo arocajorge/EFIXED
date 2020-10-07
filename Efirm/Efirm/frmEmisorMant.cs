@@ -48,6 +48,8 @@ namespace Efirm
             try
             {
                 Event_frmEmisorMant_FormClosing(sender, e);
+
+
             }
             catch (Exception ex)
             {
@@ -84,6 +86,8 @@ namespace Efirm
                 InfoEmp.Formato_fecha_Base_ext = cmb_formato_fecha.SelectedValue.ToString();
                 InfoEmp.Formato_hora_Base_ext = cmb_formato_hora.SelectedValue.ToString();
                 InfoEmp.Nombre_tabla_Base_ext = txt_nom_tabla.Text;
+
+
                 InfoEmp.IdCatalogo_agent_ret =cmb_agen_ret==null?null: cmb_agen_ret.EditValue.ToString();
                 InfoEmp.IdCatalogo_micro_emp = cmb_micro.EditValue == null ? null : cmb_micro.EditValue.ToString();
                 if (pic_foto.Image != null)
