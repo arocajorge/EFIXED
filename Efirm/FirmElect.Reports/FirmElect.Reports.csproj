@@ -245,7 +245,6 @@
     <EmbeddedResource Include="xRpt_liquidacion_compra_Gen_Forma_Pago.resx">
       <DependentUpon>xRpt_liquidacion_compra_Gen_Forma_Pago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="xRpt_Ride_ERROR.resx">
       <DependentUpon>xRpt_Ride_ERROR.cs</DependentUpon>
     </EmbeddedResource>

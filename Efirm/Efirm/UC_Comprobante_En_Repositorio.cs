@@ -17,6 +17,7 @@ using DevExpress.XtraSplashForm;
 using DevExpress.XtraSplashScreen;
 using System.Globalization;
 using System.Threading;
+using System.Xml.Linq;
 
 
 
@@ -307,7 +308,7 @@ namespace Efirm
                         continue;
 
                     }
-
+                    AgregarInfoAdicional(xmlcomprobante);
                     Validar_tag_basicos_xml(xmlcomprobante, item);
                     Arreglar_archivos(xmlcomprobante, item);
                     validar_archivos_con_xsd(xmlcomprobante, item);
@@ -505,6 +506,33 @@ namespace Efirm
                 BusSisLog.Log_Error(ex.Message.ToString(), eTipoError.ERROR, this.ToString());                
             }
 
+        }
+
+        void AgregarInfoAdicional(XmlDocument xmlcomprobante)
+        {
+            try
+            {
+                var rootElement = XElement.Parse(xmlcomprobante.InnerXml.ToString());
+                var infoAdicional = rootElement.Element("infoAdicional");
+                if (infoAdicional == null)
+                {
+                    //Validar si aplica la leyenda
+                    XElement xmlinfoAdicional = new XElement("infoAdicional",
+                        new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS"),
+                        new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001"));
+                    rootElement.Add(xmlinfoAdicional);
+                    xmlcomprobante.GetElementsByTagName("comprobante")[0].InnerXml += xmlinfoAdicional.ToString();
+                }
+                else
+                {
+                    rootElement.Element("infoAdicional").Add(new XElement("campoAdicional", new XAttribute("nombre", "REGIMEN"), "REGIMEN DE MICROEMPRESAS"),
+                        new XElement("campoAdicional", new XAttribute("nombre", "RESOLUCION"), "Contribuyente Agente de Retencion segun la resolución NAC-DNCRASC20-00000001"));
+                }
+            }
+            catch (Exception ex)
+            {
+                BusSisLog.Log_Error(ex.Message.ToString(), eTipoError.ERROR, this.ToString());
+            }
         }
 
         void Arreglar_archivos(XmlDocument xmlcomprobante, Archivo_Info item)
