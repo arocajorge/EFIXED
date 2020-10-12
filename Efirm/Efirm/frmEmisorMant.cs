@@ -88,7 +88,7 @@ namespace Efirm
                 InfoEmp.Nombre_tabla_Base_ext = txt_nom_tabla.Text;
 
 
-                InfoEmp.IdCatalogo_agent_ret =cmb_agen_ret==null?null: cmb_agen_ret.EditValue.ToString();
+                InfoEmp.IdCatalogo_agent_ret =cmb_agen_ret.EditValue==null?null: cmb_agen_ret.EditValue.ToString();
                 InfoEmp.IdCatalogo_micro_emp = cmb_micro.EditValue == null ? null : cmb_micro.EditValue.ToString();
                 if (pic_foto.Image != null)
                 {
