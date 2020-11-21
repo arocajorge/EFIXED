@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CargarComprobantes));
             this.panelMain = new System.Windows.Forms.Panel();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
@@ -230,9 +230,9 @@
             // gridControlCbtes
             // 
             this.gridControlCbtes.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControlCbtes.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControlCbtes.Location = new System.Drawing.Point(3, 16);
             this.gridControlCbtes.MainView = this.gridViewCNG;
             this.gridControlCbtes.Name = "gridControlCbtes";
