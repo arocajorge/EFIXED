@@ -173,7 +173,7 @@ namespace FirmElect.Data.Proceso_efixed
                                 imp.tarifa = Convert.ToDecimal(item_det.vt_por_iva);
                                 imp.baseImponible = Convert.ToDecimal(item_det.vt_Subtotal);
                                 imp.valor = Convert.ToDecimal(item_det.vt_iva);
-
+                                fDetalle.precioTotalSinImpuesto = 0;
                             }
 
                             fDetalle.impuestos = new List<impuesto>();

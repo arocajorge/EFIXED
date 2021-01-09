@@ -154,7 +154,7 @@ namespace Efirm
                 formularios.Add("frmComprobantes_validos");
                 formularios.Add("frmAdministrador_cbtes_Auto_para_exportacion");
 
-                /*
+                
                 foreach (var item in formularios)
                 {
 
@@ -209,7 +209,7 @@ namespace Efirm
                         }
                     }
                
-                } */
+                } 
             }
             catch (Exception ex)
             {
