@@ -103,18 +103,24 @@ namespace FirmElect.Data.Proceso_efixed
                             impuesto.codigo = "2";
                             if (item_imp.vt_por_iva == 0)
                             {
-                                impuesto.baseImponible =Convert.ToDecimal("0.00") ;
-                                impuesto.codigoPorcentaje = "1";
+                                impuesto.baseImponible = Convert.ToDecimal(item_imp.Base_imponible);
+                                impuesto.codigoPorcentaje = "0";
+                                impuesto.tarifa = 0;
+                                impuesto.tarifaSpecified = true;
                             }
                             if (item_imp.vt_por_iva == 12)
                             {
                                 impuesto.baseImponible = Convert.ToDecimal(item_imp.Base_imponible);
                                 impuesto.codigoPorcentaje = "2";
+                                impuesto.tarifa = 12;
+                                impuesto.tarifaSpecified = true;
                             }
                             if (item_imp.vt_por_iva == 14)
                             {
                                 impuesto.codigoPorcentaje = "3";
                                 impuesto.baseImponible = Convert.ToDecimal(item_imp.Base_imponible);
+                                impuesto.tarifa = 14;
+                                impuesto.tarifaSpecified = true;
                             }
                             impuesto.valor = Convert.ToDecimal(item_imp.impuesto);
                             myObject.infoFactura.totalConImpuestos.Add(impuesto);
@@ -173,7 +179,7 @@ namespace FirmElect.Data.Proceso_efixed
                                 imp.tarifa = Convert.ToDecimal(item_det.vt_por_iva);
                                 imp.baseImponible = Convert.ToDecimal(item_det.vt_Subtotal);
                                 imp.valor = Convert.ToDecimal(item_det.vt_iva);
-                                fDetalle.precioTotalSinImpuesto = 0;
+                                //fDetalle.precioTotalSinImpuesto = 0;
                             }
 
                             fDetalle.impuestos = new List<impuesto>();
