@@ -131,11 +131,11 @@ namespace MailEfirm.Controls
         private void BtnEnviarMail_Click(object sender, EventArgs e)
         {
             txt_correo_destinatario.Focus();
-            if (ValidarCorreo.email_bien_escrito(txt_correo_destinatario.Text) == false)
-            {
-                MessageBox.Show("Correo destinatario esta mal escrito ... Error mail no valido");
-                return;
-            }
+            //if (ValidarCorreo.email_bien_escrito(txt_correo_destinatario.Text) == false)
+            //{
+            //    MessageBox.Show("Correo destinatario esta mal escrito ... Error mail no valido");
+            //    return;
+            //}
 
             listadosArchivoaAdjunto = new List<mail_Mensaje_Archi_Adjunto_Info>();
 
