@@ -146,14 +146,15 @@ namespace Efirm
 
 
                 List<string> formularios = new List<string>();
-
+                
                 formularios.Add("Frm_Main_Mail");
+                /*
                 formularios.Add("frmBuscar_comprobantes");
                 formularios.Add("frmComprobantes_en_repocitorio");
                 formularios.Add("frmComprobantes_recibidos_sin_respuestas");
                 formularios.Add("frmComprobantes_validos");
                 formularios.Add("frmAdministrador_cbtes_Auto_para_exportacion");
-
+                */
                 
                 foreach (var item in formularios)
                 {

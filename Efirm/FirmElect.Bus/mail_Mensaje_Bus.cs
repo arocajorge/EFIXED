@@ -514,7 +514,7 @@ namespace FirmElect.Bus
            }
            catch (Exception ex)
            {
-               mensajeErrorOut = "catch (SmtpException ex) : " + ex.Message + " " + ex.InnerException + " datos de la cta:" + SConfigCta;
+               mensajeErrorOut = "catch (SmtpException ex) : " + ex.Message + " " + ex.InnerException + " datos de la cta: " + SConfigCta;
                return false;
            }
 
